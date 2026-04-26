@@ -1,390 +1,367 @@
 <!doctype html>
-<hmtl lang="ro">
+<!-- Cerința 1 -->
+<html lang="ro">
 
-  <head>
-    <meta charset="utf-8" />
-    <meta name="author" content="David Mihailescu" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-      content="Oferim o gamă variată de instrumente și accesorii pentru muzicienii de toate nivelurile, la cele mai bune prețuri din București." />
-    <meta name="keywords"
-      content="instrumente, muzica, chitara, bucuresti, vinyl, accesorii, studio, scena, boxe, mixere, microfoane, amplificator, corzi, pene, bețe de tobă, acordoare, cabluri" />
+<head>
+  <meta charset="utf-8">
+  <meta name="author" content="David Mihailescu">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Oferim o gamă variată de instrumente și accesorii pentru muzicienii de toate nivelurile, la cele mai bune prețuri din București.">
+  <meta name="keywords"
+    content="instrumente, muzica, chitara, bucuresti, vinyl, accesorii, studio, scena, boxe, mixere, microfoane, amplificator, corzi, pene, bețe de tobă, acordoare, cabluri">
 
-    <link rel="icon" type="image/png" href="./resurse/imagini/favicon/favicon-96x96.png" sizes="96x96" />
-    <link rel="icon" type="image/svg+xml" href="./resurse/imagini/favicon/favicon.svg" />
-    <link rel="shortcut icon" href="./resurse/imagini/favicon/favicon.ico" />
-    <link rel="apple-touch-icon" sizes="180x180" href="./resurse/imagini/favicon/apple-touch-icon.png" />
-    <link rel="manifest" href="./resurse/imagini/favicon/site.webmanifest" />
+  <!-- Cerința 2 -->
+  <link rel="icon" type="image/png" href="./resurse/ico/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/svg+xml" href="./resurse/ico/favicon.svg">
+  <link rel="shortcut icon" href="./resurse/ico/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="./resurse/ico/apple-touch-icon.png">
+  <link rel="manifest" href="./resurse/ico/site.webmanifest">
+  <meta name="msapplication-TileColor" content="#1b3b24">
+  <!-- Cerința 4 -->
+  <title>Magazin de muzica</title>
 
-    <title>Magazin de muzica</title>
+</head>
 
-  </head>
+<body>
 
-  <body>
+  <!-- Cerința 5 -->
+  <header>
+    <h1>Magazin de Muzică</h1>
+    <!-- Cerința 8 -->
+    <nav>
+      <ul>
+        <li><a href="index.html">Acasă</a>
+          <ul>
+            <li><a href="#welcome">Bun venit</a></li>
+            <li><a href="#promotii">Promoții</a></li>
+            <li><a href="#produse">Instrumente</a></li>
+            <li><a href="#anunturi">Evenimente</a></li>
+          </ul>
+        </li>
+        <li><a href="despre.html">Despre noi</a></li>
+        <li><a href="produse.html">Produse</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <header>
-      <h1>Magazin de muzica</h1>
-      <nav>
-        <ul>
-          <li> Acasă
-            <ul>
-              <li> <a href="welcome">Welcome</a></li>
-              <li> <a href="promotii">Promotii</a></li>
-            </ul>
-          </li>
-          <li> Despre noi </li>
-          <li> Produse </li>
-          <li> Contact </li>
-        </ul>
-      </nav>
-    </header>
+  <main> <!--  comentariu -->
+    <!-- Cerința 6 -->
+    <div id="grid-pagina">
 
-    <main> <!--  comentariu -->
-      <div id="grid-pagina">
+      <section id="welcome">
+        <!-- Cerința 7 -->
+        <hgroup>
+          <h2>Bine ați venit</h2>
+          <p class="subtitlu">Cel mai complet magazin de instrumente muzicale din București</p>
+        </hgroup>
 
-        <section id="welcome">
-          <hgroup>
-            <h2>Bine ati venit</h2>
-            <p class="subtitlu">Prezentarea cofetăriei</p>
-          </hgroup>
+        <!-- Cerința 3 -->
+        <p class="intro">Vă mulțumim că ați ales site-ul nostru. Aici găsiți o gamă variată de <b>instrumente</b> de
+          <b>muzică</b> și echipamente profesionale.
+        </p>
 
-          <p class="intro">Vă mulțumim că ne vizitați site-ul. Luați de aici niște biscuiți virtuali. Poftă bună!</p>
+        <div class="intro-oferte">
+          <div>Chitare</div>
+          <div>Vinyl-uri</div>
+          <div>Tobe</div>
+          <div>Mixere</div>
+          <div>Boxe</div>
+        </div>
 
-          <div class="intro-oferte">
-            <div>Pateuri</div>
-            <div>Bomboane</div>
-            <div>Fursecuri</div>
-            <div>Prajituri</div>
-            <div>Torturi</div>
-          </div>
-          <p class="anunt intro">Vă puteți îngrășa atât la sediul nostru cât și la propriul dumneavoastră domiciliu, cu
-            ajutorul ofertei noastre de livrare a produselor prin curier.</p>
-          <div id="dv-prezentare-1">
-            <div id="dv-prezentare">
+        <p class="anunt intro">Fie că vă pregătiți pentru o sesiune în <b>studio</b> sau pentru un concert pe
+          <b>scenă</b>, livrăm rapid orice <b>accesorii</b> direct la domiciliul dumneavoastră.
+        </p>
+
+        <div id="dv-prezentare-1">
+          <!-- Cerința 11 -->
+          <div id="dv-prezentare">
+            <figure>
               <picture>
-                <!-- il ia pe primul care se potriveste cu query-ul din media-->
-                <source srcset="./resurse/imagini/macarons-200x200.jpg" media="(max-width:700px)" />
-                <source srcset="./resurse/imagini/macarons.jpg" media="(max-width:1200px)" />
-                <img src="./resurse/imagini/macarons-640x360.jpg" alt="text" />
+                <source srcset="./resurse/imagini/instrumente-mic.jpg" media="(max-width:700px)">
+                <source srcset="./resurse/imagini/instrumente-mediu.jpg" media="(max-width:1200px)">
+                <img src="./resurse/imagini/instrumente-mare.jpg" alt="Selecție instrumente muzicale"
+                  title="Descoperă colecția noastră de instrumente">
               </picture>
-            </div>
+              <figcaption>Magazinul nostru oferă o gamă largă de instrumente muzicale pentru toate nivelurile de experiență.</figcaption>
+            </figure>
           </div>
-          <hr class="prajituri" />
-          <div id="container-video">
-            <img style="width:50%" class="farfurie" src="resurse/imagini/farfurie-flori-albastre.png" alt="farfurie"
-              title="O farfurie cu flori">
-            <div id="centrare-video">
-              <div id="clip-video">
-                <div id="stil-video">
-                  <video width="320" height="240" playsinline autoplay loop muted>
-                    <source src="resurse/video/Chocolate.mp4" type="video/mp4">
-                    <source src="resurse/video/Chocolate.ogv" type="video/ogv">
-                    <track default
-                      src="data:image/png;base64, V0VCVlRUIC0gQ2lvY29sYXTEgwoKMDA6MDAuMDAwIC0tPiAwMDowMy4wMDAgbGluZTowCkNpb2NvbGF0xIMhISEKCjAwOjAzLjAwMCAtLT4gMDA6MDcuMDAwIGxpbmU6MApNdWx0xIMgY2lvY29sYXTEgyEhISEKCjAwOjA5LjAwMCAtLT4gMDA6MTQuMDAwIGxpbmU6MApVcHMsIGFtIG11cmTEg3JpdCBtYXNhIQoKMDA6MTQuNTAwIC0tPiAwMDoxOS4wMDAgbGluZTowCk51IGNvbnRlYXrEgyEgQ2lvY29sYXTEg8SDxIPEg8SDxIMhCgo="
-                      kind="captions" srclang="ro" label="romana">
-                    <track
-                      src="data:image/png;base64, V0VCVlRUIC0gQ2hvY29sYXRlDQoNCjAwOjAwLjAwMCAtLT4gMDA6MDMuMDAwDQpDaG9jb2xhdGUhISENCg0KMDA6MDMuMDAwIC0tPiAwMDowNy4wMDANCkxvdHMgb2YgY2hvY29sYXRlISEhIQ0KDQowMDowOS4wMDAgLS0+IDAwOjE0LjAwMA0KT3VwcywgdGFibGUgZ290IGRpcnR5IQ0KDQowMDoxNC41MDAgLS0+IDAwOjE5LjAwMA0KRG9lc24ndCBtYXR0ZXIhIENob2NvbGF0ZSEhIQ0KDQo="
-                      kind="captions" srclang="en" label="engleza">
-                  </video>
-                </div>
-              </div>
-            </div>
-          </div>
+        </div>
+      </section>
+      <section id="promotii">
+        <h2>Promoții și oferte speciale</h2>
+
+        <!-- Cerința 9 -->
+        <blockquote>
+          "O chitară bună îți schimbă percepția asupra muzicii, iar o ofertă bună îți protejează portofelul!"
+          <em>Echipa Magazinului</em>
+        </blockquote>
+
+        <article>
+          <!-- Cerința 12 -->
+          <h3 class="titlu">Super oferta de weekend la Chitare</h3>
+          <p><b>Magazinul de Muzică</b> oferă <b>reduceri de <s>10%</s> <ins>15%</ins></b> pentru toate instrumentele
+            cu coarde cumpărate în intervalul 10:00 - 14:00.</p>
+          <p>Oferta este valabilă doar în zilele de sâmbătă și duminică la sediul nostru marcat cu <abbr
+              title="Sediul Central București">SCB</abbr>.</p>
+        </article>
+
+        <article>
+          <h3>Pachetul Începătorului</h3>
+          <p>Avem pachete complete pentru cei care abia se apucă de muzică, la un preț special. Pachetul cuprinde:</p>
+          <ol>
+            <li>O chitară acustică (sau un <i lang="en">keyboard</i> pentru clăpari)</li>
+            <li>Un set de corzi de rezervă</li>
+            <li>Un cablu de instrument</li>
+            <li>Gratis: o pană de chitară personalizată cu logo-ul magazinului</li>
+            <li><strong>ATENȚIE!</strong> Stocul pentru aceste pachete este extrem de limitat!</li>
+          </ol>
+        </article>
+
+        <article>
+          <h3>Ghid de termeni muzicali</h3>
+          <p>Ești la început de drum? Iată ce înseamnă câțiva termeni pe care îi vei găsi pe site-ul nostru:</p>
+
+          <dl>
+            <dt>Tuner (Acordor)</dt>
+            <dd>Un dispozitiv electronic mic, esențial, care te ajută să îți acordezi instrumentul la frecvența
+              perfectă.</dd>
+
+            <dt>Amplificator (Amp)</dt>
+            <dd>Echipamentul magic care preia semnalul electric al chitarei și îl transformă într-un sunet suficient
+              de puternic pentru o reprezentație live.</dd>
+          </dl>
+        </article>
+      </section>
+      <section id="produse">
+        <h2>Produsele noastre</h2>
+        <p>Vă oferim o gamă variată de instrumente muzicale pentru toate preferințele.</p>
+        <section>
+          <h3>Chitare</h3>
+          <p>La noi găsiți cele mai rezonante chitare, fie că sunteți la început sau profesionist!</p>
+          <p>Avem chitare:</p>
+          <ul>
+            <li>acustice</li>
+            <li>clasice</li>
+            <li>electrice</li>
+            <li>bass</li>
+            <li>electro-acustice</li>
+          </ul>
         </section>
-        <section id="promotii">
-          <h2>Promoții și oferte</h2>
-          <article>
-            <h3 class="titlu">Super ofertă de weekend</h3>
-            <p><b>Cofetăria Dulcelind</b> oferă <b>reduceri de <s>10%</s> <ins>15%</ins></b> pentru toate produsele
-              cumpărate în intervalul 10-14.</p>
-            <p>Oferta este valabilă doar în zilele de sâmbătă și duminică la sediile <abbr
-                title="Cofetăria Dulcelind">CD</abbr>.</p>
-            <p>în cazul în care cumpărați mai mult de zece <b>prăjituri</b> primiți si un card de fidelitate pentru
-              Salvare!</p>
-          </article>
-          <article>
-            <h3>Ofertă pachet</h3>
-            <p>Cofetăria Dulcelind oferă pachete cuprinzând:</p>
-            <ol>
-              <li><i lang="en">icecream</i></li>
-              <li>Un set de 4 pateuri de sortimente diferite</li>
-              <li>O prajitură la alegere</li>
-              <li>Un <i>suc</i></li>
-              <li>Gratis: o farfurioară ornata cu inițiala cofetăriei</li>
-              <li>Gratis: o felicitare cu imaginea cofetăriei</li>
-              <li>Gratis: un pui de pisică (am găsit niște pui de pisică abandonați lângă cofetărie și noi nu îi putem
-                păstra. Nu ne reclamați la ANPC, <!--abreviere--> mulțumim de înțelegere!). </li>
-            </ol>
-
-          </article>
-          <article>
-            <h3>Prajituri de Halloween</h3>
-            <p>Noi punem suflet în prăjiturile noastre!... Literalmente!</p>
-            <p>Chiar și dacă nu e Halloween încă, avem prajituri bântuite, de toate dimensiunile</p>
-            <ol>
-              <li>Când vreți să gustați o prajitura, aceasta țipă, sau, mai rău, vă spune sincer că ar cam trebui să vă
-                mai spălați pe dinți.</li>
-              <li>Când puneți mai multe prăjituri pe platou, vor conspira împotriva dumneavoastră... hehe... dar n-au ce
-                să vă facă, în final sunt doar niște prăjituri</li>
-              <li>Nu încercați să mușcați vreun fursec de Halloween, căci va mușca el înainte. Ați fost avertizați.</li>
-
-            </ol>
-
-          </article>
-          <article>
-            <h3>Prăjituri de Anul Nou</h3>
-            <p>La începutul fiecărui an vă faceți planuri că de data asta veti trăi mai sănatos, veți mânca mai chibzuit
-              și vă veți duce din prima zi la sală. Știm cu toții că e doar o amăgire. Luați mai bine o prăjitură, măcar
-              să va delectați cu un gust bun și dulce în timp ce plângeți despre kilogramele în plus.</p>
-
-          </article>
-        </section>
-        <section id="produse">
-          <h2>Produsele noastre</h2>
-          <p>Vă oferim o multitudine de metode să câștigați cu succes kilograme în plus.</p>
-          <section>
-            <h3>Torturi</h3>
-            <p>În caz că nu le puteți mânca fiindcă sunteți la dietă și doar vă uitați la ele, puneți accentul pe u!</p>
-            <p>Avem torturi cu:</p>
-            <ul>
-              <li>ciocolată</li>
-              <li>frișcă</li>
-              <li>fructe</li>
-              <li>dulceață</li>
-              <li>înghețată</li>
-              <li>regrete</li>
-            </ul>
-          </section>
-          <section>
-            <h3>Prăjituri</h3>
-            <p>Oferim prăjiturile clasice plus câteva creations personnelles, oui!</p>
-            <p>Prăjituri:</p>
-            <ul>
-              <li>savarină</li>
-              <li>amandină</li>
-              <li>tartă cu fructe</li>
-              <li>doboș</li>
-              <li>carpați (orientali, meridionali și occidentali)</li>
-              <li>ecler</li>
-              <li>tiramisu</li>
-              <li>colivă</li>
-            </ul>
-          </section>
-
-          <section>
-            <h3>Pateuri</h3>
-            <p>Pateurile noastre sunt umplute cu:</p>
-            <ul>
-              <li>brânză</li>
-              <li>pizza</li>
-              <li>spanac</li>
-              <li>ciuperci</li>
-              <li>compoziție secretă (sincer, nici noi nu mai știm ce conține)</li>
-            </ul>
-          </section>
-        </section>
-        <section id="orar">
-          <h2>Orar</h2>
-          <table id="tab-orar">
-            <thead>
-
-              <tr>
-                <th>Cod</th>
-                <th>Perioadă</th>
-                <th>Zi</th>
-                <th>Interval dimineata</th>
-                <th>Pauza de masa</th>
-                <th>Interval seară</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td></td>
-                <td rowspan="5">Zile<br />Lucrătoare</td>
-                <td>Luni</td>
-                <td>10-12</td>
-                <td>12-14</td>
-                <td>14-20</td>
-              </tr>
-              <tr>
-                <td></td>
-
-                <td>Marti</td>
-                <td>9-12</td>
-                <td>12-14</td>
-                <td>14-21</td>
-              </tr>
-              <tr>
-                <td></td>
-
-                <td>Miercuri</td>
-                <td>9-11</td>
-                <td>11-13</td>
-                <td>14-21</td>
-              </tr>
-              <tr>
-                <td></td>
-
-                <td>Joi</td>
-                <td>9-11</td>
-                <td>11-13</td>
-                <td>14-21</td>
-              </tr>
-              <tr>
-                <td></td>
-
-                <td>Vineri</td>
-                <td>9-12</td>
-                <td>12-14</td>
-                <td>14-19</td>
-              </tr>
-              <tr>
-                <td></td>
-                <td rowspan="2">Weekend</td>
-                <td>Sambata</td>
-                <td>10-12</td>
-                <td>12-13</td>
-                <td>13-16</td>
-              </tr>
-              <tr>
-                <td></td>
-                <td>Duminica</td>
-                <td>10-14</td>
-                <td>-</td>
-                <td>inchis</td>
-              </tr>
-            </tbody>
-            <tfoot>
-              <tr>
-                <td colspan="6">Închis cu ocazia sărbătorilor legale, sau, când ne e mai lene așa.</td>
-              </tr>
-            </tfoot>
-          </table>
-          <p><strong>Atentie!!!</strong> in prima zi a lunii facem inventar.</p>
-        </section>
-        <figure id="fig1" class="fg-img">
-          <img src="resurse/imagini/briose-frisca.png" alt="briose">
-          <figcaption>Briose 1</figcaption>
-        </figure>
-        <figure id="fig2" class="fg-img">
-          <img src="resurse/imagini/briose-frisca.png" alt="briose">
-          <figcaption>Briose 2</figcaption>
-        </figure>
-        <figure id="fig3" class="fg-img">
-          <img src="resurse/imagini/briose-frisca.png" alt="briose">
-          <figcaption>Briose 3</figcaption>
-        </figure>
-        <figure id="fig4">
-          <img src="resurse/imagini/briose-frisca.png" alt="briose">
-          <figcaption>Briose 3</figcaption>
-        </figure>
-        <section id="anunturi">
-          <h2 class="fg-img">Anunțuri</h2>
-          <p><time datetime="2025-07-20">20 iulie 2025</time>Nu avem nimic de anuntat, doar a trecut ceva vreme de la
-            ultimul anunț și ne-am gândit să mai scriem ceva pe aici.</p>
-          <p><time datetime="2022-01-05">5 ianuarie 2022</time> <strong>No more Covid!!!!</strong></p>
-
-          <p><time datetime="2020-03-15">15 martie 2020</time> <span>Am adăugat o prăjitură noua în meniu</span></p>
-          <p><time datetime="2020-04-05">5 aprilie 2020</time> <span>Am adăugat o prăjitură noua în meniu</span></p>
-          <p><time datetime="2020-07-05">5 iulie 2020</time> Am adăugat o prăjitură noua în meniu</p>
-          <p><time datetime="2020-09-15">15 septembrie 2020</time> Am adăugat un fursec nou în meniu</p>
-          <p><time datetime="2020-12-20">20 decembrie 2020</time> Nu avem nimic de anunțat, dar ne era dor de voi.</p>
-          <p><time datetime="2020-12-28">28 decembrie 2020</time> Am adăugat o prăjitură noua în meniu</p>
-          <p><time datetime="2021-01-01">1 ianuarie 2021</time> Un an nou fericit!</p>
-          <p><time datetime="2021-02-11">11 februarie 2021</time> Studiile au arătat că prăjiturile sunt cele mai
-            sănătoase alimente.
-            E adevărat că doar studiile noastre, dar astea sunt detalii. </p>
-        </section>
-        <section id="index-intrebari">
-          <h2>Întrebări frecvente</h2>
-          <details>
-            <summary>Produsele dumneavoastră provoacă afecțiuni dentare?</summary>
-            <p>Da!</p>
-          </details>
-          <details>
-            <summary>Produsele dumneavoastră provoacă afecțiuni ale sistemului digestiv (precum diabetul)?</summary>
-            <p>Da!</p>
-          </details>
-          <details>
-            <summary>Produsele dumneavoastră provoacă obezitate?</summary>
-            <p>Foarte! Da!</p>
-          </details>
-          <details>
-            <summary>Sunteți cumva asociați cu medicii dentiști, medicii gastroenterologi, companiile farmaceutice și
-              sălile de Fitness?</summary>
-            <p>Ne rezervăm dreptul de a nu răspunde la această întrebare; mulțumim pentru înțelegere!</p>
-          </details>
+        <section>
+          <h3>Tobe și Percuție</h3>
+          <p>Oferim seturi complete de tobe plus accesorii individuale.</p>
+          <ul>
+            <li>tobe acustice</li>
+            <li>tobe electronice</li>
+            <li>cinele</li>
+            <li>pedale</li>
+            <li>bețe de tobă</li>
+          </ul>
         </section>
 
+        <section>
+          <h3>Echipamente de Studio</h3>
+          <p>Avem tot ce îți trebuie pentru înregistrări perfecte:</p>
+          <ul>
+            <li>mixere</li>
+            <li>microfoane</li>
+            <li>căști de studio</li>
+            <li>interfețe audio</li>
+            <li>monitoare de studio</li>
+          </ul>
+        </section>
+      </section>
+      <section id="orar">
+        <!-- Cerința 15 -->
+        <h2>Orar</h2>
+        <table id="tab-orar">
+          <caption>Program de funcționare și orar</caption>
+          <thead>
+
+            <tr>
+              <th>Cod</th>
+              <th>Perioadă</th>
+              <th>Zi</th>
+              <th>Interval dimineata</th>
+              <th>Pauza de masa</th>
+              <th>Interval seară</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td></td>
+              <td rowspan="5">Zile<br>Lucrătoare</td>
+              <td>Luni</td>
+              <td>10-12</td>
+              <td>12-14</td>
+              <td>14-20</td>
+            </tr>
+            <tr>
+              <td></td>
+
+              <td>Marti</td>
+              <td>9-12</td>
+              <td>12-14</td>
+              <td>14-21</td>
+            </tr>
+            <tr>
+              <td></td>
+
+              <td>Miercuri</td>
+              <td>9-11</td>
+              <td>11-13</td>
+              <td>14-21</td>
+            </tr>
+            <tr>
+              <td></td>
+
+              <td>Joi</td>
+              <td>9-11</td>
+              <td>11-13</td>
+              <td>14-21</td>
+            </tr>
+            <tr>
+              <td></td>
+
+              <td>Vineri</td>
+              <td>9-12</td>
+              <td>12-14</td>
+              <td>14-19</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td rowspan="2">Weekend</td>
+              <td>Sambata</td>
+              <td>10-12</td>
+              <td>12-13</td>
+              <td>13-16</td>
+            </tr>
+            <tr>
+              <td></td>
+              <td>Duminica</td>
+              <td>10-14</td>
+              <td>-</td>
+              <td>inchis</td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="6">Închis cu ocazia sărbătorilor legale, sau, când ne e mai lene așa.</td>
+            </tr>
+          </tfoot>
+        </table>
+        <p><strong>Atentie!!!</strong> in prima zi a lunii facem inventar.</p>
+      </section>
+      <section id="resurse-utile">
+        <!-- Cerința 13 -->
+        <h2>Resurse și Linkuri Utile</h2>
+        <p>Consultați site-ul nostru partener pentru <a href="https://www.musicradar.com/" target="_blank">mai multe
+            recenzii de instrumente</a>.</p>
+        <p>Pentru documentația oficială despre MIDI, accesați:<br>
+          <a
+            href="https://www.midi.org/specifications#midi-1-0">https://www<wbr>.midi<wbr>.org/<wbr>specifications<wbr>#midi-1-0</a>
+        </p>
+        <p>Apasă pe imaginea de mai jos pentru a o vedea mărită:</p>
+        <p>
+          <a href="resurse/imagini/instrumente-640x360.jpg" title="Vezi imaginea mărită">
+            <img src="resurse/imagini/instrumente-200x200.jpg" alt="Instrumente" style="width:200px;">
+          </a>
+        </p>
+        <p>
+          <a href="resurse/imagini/instrumente-640x360.jpg" download="oferta_instrumente_muzica.jpg">Descarcă oferta
+            noastră (Imagine)</a>
+        </p>
+      </section>
+      <section id="anunturi">
+        <!-- Cerința 10 -->
+        <h2>Evenimente și Anunțuri</h2>
+
+        <ul>
+          <li>
+            <time datetime="2026-05-15T18:00">15 mai ora 18:00</time>,
+            <b>Lansare Album Vinyl</b> - Audiție în avanpremieră a noului album. Oferim câte o pană de chitară cadou
+            primilor 20 de participanți în funcție de stocul disponibil.
+          </li>
+
+          <li>
+            <time datetime="2026-06-10T14:30">10 iunie ora 14:30</time>,
+            <b>Workshop de Tobe</b> - Demonstrație live la setul de tobe acustice. Intrarea este liberă pentru toți
+            pasionații de percuție.
+          </li>
+
+          <li>
+            <time datetime="2026-07-20T10:00">20 iulie ora 10:00</time>,
+            <b>Târg de Instrumente Vintage</b> - Expoziție și vânzare de chitare clasice, sintetizatoare vechi și
+            accesorii rare.
+          </li>
+        </ul>
+      </section>
+      <section id="index-intrebari">
+        <!-- Cerința 16 -->
+        <h2>Întrebări frecvente și Informații</h2>
+        <details>
+          <summary>Oferiți garanție pentru instrumente?</summary>
+          <p>Da! Toate instrumentele noi vin cu o garanție de 24 de luni.</p>
+        </details>
+        <details>
+          <summary>Se pot testa instrumentele în magazin?</summary>
+          <p>Absolut. Avem cabine izolate fonic pentru testarea amplificatoarelor și chitarelor.</p>
+        </details>
+        <details>
+          <summary>Faceți și reparații / mentenanță?</summary>
+          <p>Da, avem un lutier autorizat în cadrul magazinului nostru pentru mentenanță periodică.</p>
+        </details>
+
+        <h3>Grad de ocupare și Stocuri</h3>
+        <!-- Cerința 17 -->
+        <p>Aglomerație în magazin în acest moment (capacitate clienți):
+          <meter value="15" min="0" max="100" low="30" high="80" optimum="10" title="15% ocupat">15%</meter>
+        </p>
+        <p>Disponibilitate stoc chitare electrice (modele populare):
+          <meter value="95" min="0" max="100" low="30" high="80" optimum="90" title="95% disponibil">95%</meter>
+        </p>
+      </section>
+    </div>
+    <section id="recenzii-video">
+      <!-- Cerința 14 -->
+      <h2>Recenzii Video Echipamente</h2>
+      <p>Urmăriți câteva demonstrații ale celor mai populare instrumente din magazinul nostru.</p>
+      <div class="container-iframe">
+        <div class="taburi-iframe">
+          <a href="https://www.youtube.com/embed/U7Xal9EvSpM?si=oaYUHe2Dy9GA2Oo1" target="ifr-video">Demonstrație
+            Chitară Fender (Revenire la video inițial)</a><br>
+          <a href="https://www.youtube.com/embed/K2eV1h2-nCo?si=pMzNUw6e90c2vycr" target="ifr-video">Review Claviaturi
+            Yamaha</a><br>
+          <a href="https://www.youtube.com/embed/TJfoMew1GfQ?si=hWTKfSETnomIhrTb" target="ifr-video">Review Tobe
+            Roland</a><br>
+        </div>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/U7Xal9EvSpM?si=oaYUHe2Dy9GA2Oo1"
+          name="ifr-video" title="YouTube video player" allowfullscreen></iframe>
       </div>
-      <section id="galerie-statica">
-        <h2>Galerie</h2>
-        <div id="grid-galerie">
-          <figure>
-            <div>
-              <img src="resurse/imagini/briose-frisca.png" alt="briose">
-            </div>
+    </section>
 
-            <figcaption>Briose</figcaption>
-          </figure>
-          <figure>
-            <img src="resurse/imagini/briose-frisca.png" alt="briose">
-            <figcaption>Briose</figcaption>
-          </figure>
-          <figure>
-            <img src="resurse/imagini/briose-frisca.png" alt="briose">
-            <figcaption>Briose</figcaption>
-          </figure>
-          <figure>
-            <img src="resurse/imagini/briose-frisca.png" alt="briose">
-            <figcaption>Briose</figcaption>
-          </figure>
-          <figure>
-            <img src="resurse/imagini/briose-frisca.png" alt="briose">
-            <figcaption>Briose</figcaption>
-          </figure>
-          <figure>
-            <img src="resurse/imagini/briose-frisca.png" alt="briose">
-            <figcaption>Briose</figcaption>
-          </figure>
-          <figure>
-            <img src="resurse/imagini/briose-frisca.png" alt="briose">
-            <figcaption>Briose</figcaption>
-          </figure>
+  </main>
 
-        </div>
-      </section>
-      <section id="retete">
-        <h2>Retete</h2>
-        <p>Dacă doriți să vă faceți singuri prăjiturile (dar de ce ati face asta când ne aveți pe noi???)
-          vă recomandăm următoarele rețete simple pe care sperăm să le încercați, să vedeți cât e de <s>ușor</s> să le
-          faceți,
-          să vă dați în final bătuți și să veniți să cumpărați de la noi &#128512;. Mulțumim! &#128513;</p>
-        <div class="container-iframe">
-          <div class="taburi-iframe">
-            <a href="https://www.youtube.com/embed/qtlhdIfojmc?si=TqTMN4k_BY-iuvxx" target="ifr-video">Reteta tort
-              vanilie</a>
-            <a href="https://www.youtube.com/embed/dsJtgmAhFF4" target="ifr-video">Reteta tort ciocolata</a>
-            <a href="https://www.youtube.com/embed/Wtxbt-CpA2s" target="ifr-video">Reteta tort căpșuni</a><br />
-          </div>
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/qtlhdIfojmc?si=TqTMN4k_BY-iuvxx"
-            name="ifr-video" title="YouTube video player" frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <footer>
+    <address>
+      <strong>Contactați-ne:</strong><br>
+      Telefon: <a href="tel:+400712345678">0712 345 678</a><br>
+      Email: <a href="mailto:contact@magazinmuzica.ro">contact@magazinmuzica.ro</a><br>
+      Adresa: <a href="https://maps.app.goo.gl/35pA3p5V1bSxgT6j7" target="_blank">Facultatea de Matematica si
+        Informatica,<br>Str. Academiei 14, București</a><br>
+      <a href="https://wa.me/400712345678" target="_blank">Chat pe WhatsApp</a>
+    </address>
+    <!-- Cerința 18 -->
+    <p>
+      <!-- Cerința 19 -->
+      <small>Copyright &copy; <time datetime="2026">2026</time> Mihăilescu David</small>
+    </p>
+    <a href="#welcome" title="mergi sus" id="link-top">mergi sus</a>
+  </footer>
 
+</body>
 
-        </div>
-      </section>
-
-
-
-    </main>
-    <footer>
-      <p><small>Copyright &copy;2026 Mihailescu David</small></p>
-      <a href="#" title="mergi sus" id="link-top">
-        mergi sus
-      </a>
-
-    </footer>
-  </body>
-</hmtl>
+</html>
+<!-- Cerința 20 -->
