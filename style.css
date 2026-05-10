@@ -224,6 +224,47 @@ figcaption {
 
 #container-8 {
   grid-area: z8;
+  background-color: var(--culoare-deschisa);
+  color: var(--culoare-text);
+  border: 3px solid var(--culoare-principala);
+  box-shadow: 6px 6px 0 var(--culoare-accent), inset 0 0 0 4px rgba(90, 144, 117, 0.15);
+  border-radius: 15px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#container-8:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 var(--culoare-accent), inset 0 0 0 4px rgba(90, 144, 117, 0.3);
+}
+
+#container-8 h2 {
+  color: var(--culoare-secundara);
+  text-align: center;
+  letter-spacing: 0.05em;
+  border-bottom: 3px double var(--culoare-principala);
+  padding-bottom: 10px;
+}
+
+#container-8 h3 {
+  color: var(--culoare-principala);
+  border-left: 4px solid var(--culoare-highlight);
+  padding-left: 10px;
+  margin-top: 1.2rem;
+}
+
+#container-8 ul {
+  list-style: none;
+  padding-left: 0.5rem;
+}
+
+#container-8 p {
+  border-left: 2px solid transparent;
+  padding-left: 8px;
+  transition: border-color 0.3s ease;
+}
+
+#container-8 p:hover {
+  border-left-color: var(--culoare-highlight);
 }
 
 /* --- ECRAN MEDIU (Tabletă) --- */
