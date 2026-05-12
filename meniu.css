@@ -1,0 +1,230 @@
+@charset "UTF-8";
+/* =========================================================
+   Variabile CSS pentru a permite schimbarea   ușoară a temei
+   Acestea ar trebui incluse în body, ca în fișierul original
+   ========================================================= */
+body {
+  --meniu-bg: var(--culoare-principala, #113b27);
+  --meniu-text: var(--culoare-deschisa, #baad93);
+  --meniu-hover-bg: var(--culoare-highlight, #5a9075);
+  --meniu-hover-text: var(--culoare-secundara, #2d113b);
+  /* Gradient pentru efectul hover de pe ecran mare */
+  --gradient-hover: linear-gradient(90deg, var(--meniu-bg) 0%, var(--meniu-bg) 50%, var(--meniu-text) 100%);
+}
+
+/* =========================================================
+   Clase Mixin / Extend pentru a reduce codul repetitiv
+   ========================================================= */
+nav#meniu-principal .meniu-lista .meniu-item .meniu-link {
+  display: flex;
+  align-items: center;
+}
+
+nav#meniu-principal .meniu-lista .meniu-item .submeniu, nav#meniu-principal .meniu-lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* =========================================================
+   Stilizarea Meniului (Ecran Mare Implicit)
+   ========================================================= */
+nav#meniu-principal {
+  background-color: var(--meniu-bg);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1000;
+}
+nav#meniu-principal .meniu-lista {
+  display: flex;
+  justify-content: center;
+}
+nav#meniu-principal .meniu-lista .meniu-item {
+  position: relative;
+  flex-grow: 1;
+  text-align: center;
+  /* Bara animată pentru desktop folosind ::after */
+}
+nav#meniu-principal .meniu-lista .meniu-item::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  background-image: var(--gradient-hover);
+  background-size: 200% 100%;
+  background-position: 0 0; /* Pornește invizibilă (la fel ca fundalul) */
+  transition: background-position 0.5s ease-in-out;
+}
+nav#meniu-principal .meniu-lista .meniu-item:hover::after {
+  background-position: 100% 0; /* Plimbarea gradientului la hover */
+}
+nav#meniu-principal .meniu-lista .meniu-item .meniu-link {
+  justify-content: center;
+  padding: 1rem 1.5rem;
+  color: var(--meniu-text);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease, background-color 0.3s ease;
+}
+nav#meniu-principal .meniu-lista .meniu-item .meniu-link .fa-icon {
+  margin-right: 0.5rem;
+  font-size: 1.2rem;
+}
+nav#meniu-principal .meniu-lista .meniu-item {
+  /* Stilizarea la hover a butonului principal */
+}
+nav#meniu-principal .meniu-lista .meniu-item:hover > .meniu-link {
+  color: var(--meniu-hover-text);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+nav#meniu-principal .meniu-lista .meniu-item {
+  /* --------------------------------------
+     Submeniul pentru Ecran Mare
+     -------------------------------------- */
+}
+nav#meniu-principal .meniu-lista .meniu-item .submeniu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  min-width: 220px;
+  background-color: var(--meniu-hover-bg);
+  border: 2px solid var(--meniu-bg);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  /* Efectul de deschidere (scalare verticală din centru) */
+  transform-origin: center top;
+  transform: scaleY(0);
+  visibility: hidden;
+  transition: transform 0.4s ease, visibility 0.4s ease;
+}
+nav#meniu-principal .meniu-lista .meniu-item .submeniu li a {
+  display: block;
+  padding: 0.8rem 1rem;
+  color: var(--meniu-bg);
+  text-align: left;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+  /* Comportament hover submeniu: schimbare culori */
+}
+nav#meniu-principal .meniu-lista .meniu-item .submeniu li a:hover {
+  background-color: var(--meniu-bg);
+  color: var(--meniu-text);
+}
+nav#meniu-principal .meniu-lista .meniu-item:hover > .submeniu {
+  transform: scaleY(1);
+  visibility: visible;
+}
+
+/* =========================================================
+   Ecran Mediu (Tablete): 768px - 1024px
+   ========================================================= */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  nav#meniu-principal .meniu-lista .meniu-item .meniu-link {
+    padding: 1rem;
+    font-size: 0.9rem;
+    /* Rămân doar icon-urile, textul se ascunde */
+  }
+  nav#meniu-principal .meniu-lista .meniu-item .meniu-link .nav-text {
+    display: none;
+  }
+  nav#meniu-principal .meniu-lista .meniu-item .meniu-link .fa-icon {
+    margin-right: 0;
+    font-size: 1.5rem;
+  }
+}
+/* =========================================================
+   Ecran Mic (Mobil): max-width: 767px
+   ========================================================= */
+@media screen and (max-width: 767px) {
+  nav#meniu-principal {
+    /* Afișăm butonul hamburger */
+  }
+  nav#meniu-principal #hamburger-label {
+    display: block;
+    padding: 1rem;
+    background-color: var(--meniu-bg);
+    color: var(--meniu-text);
+    font-size: 1.5rem;
+    cursor: pointer;
+    text-align: right;
+  }
+  nav#meniu-principal {
+    /* Ascundem meniul inițial */
+  }
+  nav#meniu-principal .meniu-lista {
+    display: none;
+    flex-direction: column;
+  }
+  nav#meniu-principal .meniu-lista .meniu-item {
+    width: 100%;
+    text-align: left;
+    /* Dezactivăm bara glisantă ::after complet */
+  }
+  nav#meniu-principal .meniu-lista .meniu-item::after {
+    display: none;
+  }
+  nav#meniu-principal .meniu-lista .meniu-item {
+    /* Prima opțiune (Acasă) ascunde textul și rămâne doar căsuța */
+  }
+  nav#meniu-principal .meniu-lista .meniu-item:first-child .nav-text {
+    display: none;
+  }
+  nav#meniu-principal .meniu-lista .meniu-item:first-child .fa-icon {
+    font-size: 1.8rem;
+    margin: 0 auto;
+    display: block; /* Centrare vizuală */
+  }
+  nav#meniu-principal .meniu-lista .meniu-item .meniu-link {
+    justify-content: flex-start;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  nav#meniu-principal .meniu-lista .meniu-item {
+    /* Hover general ecran mic (simplu) */
+  }
+  nav#meniu-principal .meniu-lista .meniu-item:hover > .meniu-link {
+    background-color: var(--meniu-hover-bg);
+    color: var(--meniu-bg);
+  }
+  nav#meniu-principal .meniu-lista .meniu-item {
+    /* --------------------------------------
+       Submeniul pentru Ecran Mic
+       -------------------------------------- */
+  }
+  nav#meniu-principal .meniu-lista .meniu-item .submeniu {
+    position: static;
+    width: 100%;
+    border: none;
+    background-color: #1a1a1a;
+    box-shadow: none;
+    /* Tranziție modificată: opacitate și rotație */
+    opacity: 0;
+    visibility: hidden;
+    transform: rotate(-10deg) translateY(-10px);
+    transition: transform 0.4s ease, opacity 0.4s ease;
+    /* Hack CSS pentru a ascunde conținutul când nu e vizibil */
+    max-height: 0;
+    overflow: hidden;
+  }
+  nav#meniu-principal .meniu-lista .meniu-item .submeniu li a {
+    padding-left: 2.5rem;
+    color: var(--meniu-text);
+  }
+  nav#meniu-principal .meniu-lista .meniu-item {
+    /* Când dăm hover/click pe o opțiune care are submeniu pe mobil */
+  }
+  nav#meniu-principal .meniu-lista .meniu-item:hover > .submeniu {
+    max-height: 1000px; /* suficient de mare */
+    opacity: 1;
+    visibility: visible;
+    transform: rotate(0deg) translateY(0);
+  }
+  nav#meniu-principal {
+    /* Declanșatorul pentru hamburger menu */
+  }
+  nav#meniu-principal #hamburger-toggle:checked ~ .meniu-lista {
+    display: flex;
+  }
+}/*# sourceMappingURL=meniu.css.map */

@@ -22,8 +22,9 @@
     rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./meniu.css">
 
-  <h1><i class="fa-solid fa-music fa-beat"></i> The Sound Forge</h1>
+  <title>The Sound Forge</title>
 
 </head>
 
@@ -31,23 +32,54 @@
 
   <!-- Cerința 5 -->
   <header>
-    <h1>Magazin de Muzică</h1>
-    <!-- Cerința 8 -->
-    <nav>
-      <ul>
-        <li><a href="index.html">Acasă</a>
-          <ul>
+    <h1><i class="fa-solid fa-music fa-beat"></i> Magazin de Muzică</h1>
+
+    <nav id="meniu-principal">
+      <ul class="meniu-lista">
+
+        <li class="meniu-item">
+          <a href="index.html" class="meniu-link">
+            <i class="fa-solid fa-house fa-icon"></i>
+            <span class="nav-text">Acasă</span>
+          </a>
+
+          <ul class="submeniu">
             <li><a href="#welcome">Bun venit</a></li>
             <li><a href="#promotii">Promoții</a></li>
             <li><a href="#produse">Instrumente</a></li>
             <li><a href="#anunturi">Evenimente</a></li>
           </ul>
         </li>
-        <li><a href="despre.html">Despre noi</a></li>
-        <li><a href="produse.html">Produse</a></li>
-        <li><a href="contact.html">Contact</a></li>
+
+        <li class="meniu-item">
+          <a href="produse.html" class="meniu-link">
+            <i class="fa-solid fa-guitar fa-icon"></i>
+            <span class="nav-text">Produse / Galerii</span>
+          </a>
+          <ul class="submeniu">
+            <li><a href="chitare.html">Chitare (Galerie Statică)</a></li>
+            <li><a href="tobe.html">Tobe (Galerie Dinamică)</a></li>
+            <li><a href="echipamente.html">Echipamente Studio</a></li>
+          </ul>
+        </li>
+
+        <li class="meniu-item">
+          <a href="despre.html" class="meniu-link">
+            <i class="fa-solid fa-circle-info fa-icon"></i>
+            <span class="nav-text">Despre noi</span>
+          </a>
+        </li>
+
+        <li class="meniu-item">
+          <a href="contact.html" class="meniu-link">
+            <i class="fa-solid fa-envelope fa-icon"></i>
+            <span class="nav-text">Contact</span>
+          </a>
+        </li>
+
       </ul>
     </nav>
+
   </header>
 
   <main> <!--  comentariu -->
@@ -58,8 +90,8 @@
           <!-- Cerința 7 -->
           <div id="container-1-1">
             <hgroup>
-              <h1>The Sound Forge</h1>
-              <h3>Cel mai complet magazin de instrumente muzicale din București</h3>
+              <h2>The Sound Forge</h2>
+              <p>Cel mai complet magazin de instrumente muzicale din București</p>
             </hgroup>
           </div>
           <!-- Cerința 3 -->
