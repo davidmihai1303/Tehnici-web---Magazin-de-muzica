@@ -36,6 +36,10 @@ nav#meniu-principal {
   position: relative;
   z-index: 1000;
 }
+nav#meniu-principal #hamburger-toggle,
+nav#meniu-principal #hamburger-label {
+  display: none;
+}
 nav#meniu-principal .meniu-lista {
   display: flex;
   justify-content: center;
@@ -161,7 +165,7 @@ nav#meniu-principal .meniu-lista .meniu-item:hover > .submeniu {
   nav#meniu-principal .meniu-lista .meniu-item {
     width: 100%;
     text-align: left;
-    /* Dezactivăm bara glisantă ::after complet */
+    /* Dezactivăm gradientul */
   }
   nav#meniu-principal .meniu-lista .meniu-item::after {
     display: none;
@@ -179,7 +183,7 @@ nav#meniu-principal .meniu-lista .meniu-item:hover > .submeniu {
   }
   nav#meniu-principal .meniu-lista .meniu-item .meniu-link {
     justify-content: flex-start;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   }
   nav#meniu-principal .meniu-lista .meniu-item {
     /* Hover general ecran mic (simplu) */

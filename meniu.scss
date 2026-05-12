@@ -34,6 +34,11 @@ nav#meniu-principal {
   box-shadow: 0 4px 6px rgba(0,0,0,0.3);
   position: relative;
   z-index: 1000;
+
+  #hamburger-toggle,
+  #hamburger-label {
+    display: none;
+  }
   
   .meniu-lista {
     @extend %reset-list;
@@ -159,6 +164,7 @@ nav#meniu-principal {
    Ecran Mic (Mobil): max-width: 767px
    ========================================================= */
 @media screen and (max-width: 767px) {
+
   nav#meniu-principal {
     
     /* Afișăm butonul hamburger */
@@ -181,7 +187,7 @@ nav#meniu-principal {
         width: 100%;
         text-align: left;
 
-        /* Dezactivăm bara glisantă ::after complet */
+        /* Dezactivăm gradientul */
         &::after {
           display: none;
         }
@@ -200,7 +206,7 @@ nav#meniu-principal {
 
         .meniu-link {
           justify-content: flex-start;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+          border-bottom: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         /* Hover general ecran mic (simplu) */
