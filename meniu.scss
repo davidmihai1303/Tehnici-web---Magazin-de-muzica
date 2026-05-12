@@ -8,7 +8,12 @@ body {
   --meniu-hover-bg: var(--culoare-highlight, #5a9075);
   --meniu-hover-text: var(--culoare-secundara, #2d113b);
   /* Gradient pentru efectul hover de pe ecran mare */
-  --gradient-hover: linear-gradient(90deg, var(--meniu-bg) 0%, var(--meniu-bg) 50%, var(--meniu-text) 100%);
+  --gradient-hover: linear-gradient(
+    90deg,
+    var(--meniu-bg) 0%,
+    var(--meniu-bg) 50%,
+    var(--meniu-text) 100%
+  );
 }
 
 /* =========================================================
@@ -31,7 +36,7 @@ body {
 nav#meniu-principal {
   background-color: var(--meniu-bg);
   border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   position: relative;
   z-index: 1000;
 
@@ -39,7 +44,7 @@ nav#meniu-principal {
   #hamburger-label {
     display: none;
   }
-  
+
   .meniu-lista {
     @extend %reset-list;
     display: flex;
@@ -52,7 +57,7 @@ nav#meniu-principal {
 
       /* Bara animată pentru desktop folosind ::after */
       &::after {
-        content: '';
+        content: "";
         position: absolute;
         bottom: 0;
         left: 0;
@@ -75,8 +80,10 @@ nav#meniu-principal {
         color: var(--meniu-text);
         text-decoration: none;
         font-weight: 600;
-        transition: color 0.3s ease, background-color 0.3s ease;
-        
+        transition:
+          color 0.3s ease,
+          background-color 0.3s ease;
+
         .fa-icon {
           margin-right: 0.5rem;
           font-size: 1.2rem;
@@ -98,16 +105,18 @@ nav#meniu-principal {
         top: 100%;
         left: 0;
         width: 100%;
-        min-width: 220px;
+        min-width: 100%;
         background-color: var(--meniu-hover-bg);
         border: 2px solid var(--meniu-bg);
-        box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
         /* Efectul de deschidere (scalare verticală din centru) */
         transform-origin: center top;
         transform: scaleY(0);
         visibility: hidden;
-        transition: transform 0.4s ease, visibility 0.4s ease;
+        transition:
+          transform 0.4s ease,
+          visibility 0.4s ease;
 
         li {
           a {
@@ -116,7 +125,9 @@ nav#meniu-principal {
             color: var(--meniu-bg);
             text-align: left;
             text-decoration: none;
-            transition: background-color 0.3s, color 0.3s;
+            transition:
+              background-color 0.3s,
+              color 0.3s;
 
             /* Comportament hover submeniu: schimbare culori */
             &:hover {
@@ -144,12 +155,12 @@ nav#meniu-principal {
         .meniu-link {
           padding: 1rem;
           font-size: 0.9rem;
-          
+
           /* Rămân doar icon-urile, textul se ascunde */
           .nav-text {
             display: none;
           }
-          
+
           .fa-icon {
             margin-right: 0;
             font-size: 1.5rem;
@@ -164,9 +175,7 @@ nav#meniu-principal {
    Ecran Mic (Mobil): max-width: 767px
    ========================================================= */
 @media screen and (max-width: 767px) {
-
   nav#meniu-principal {
-    
     /* Afișăm butonul hamburger */
     #hamburger-label {
       display: block;
@@ -175,14 +184,31 @@ nav#meniu-principal {
       color: var(--meniu-text);
       font-size: 1.5rem;
       cursor: pointer;
-      text-align: right;
+      text-align: left;
     }
 
     /* Ascundem meniul inițial */
     .meniu-lista {
-      display: none;
+      /* Dezactivam animatiile sub-meniului pana cand tranzitia meniului este completă */
+      pointer-events: none;
+
+      display: flex;
       flex-direction: column;
-      
+
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      visibility: hidden;
+
+      transform: rotate(-90deg) translateY(0px);
+      transform-origin: top left;
+
+      transition:
+        max-height 0.5s ease,
+        opacity 0.5s ease,
+        transform 0.8s linear,
+        visibility 0.5s;
+
       .meniu-item {
         width: 100%;
         text-align: left;
@@ -199,7 +225,7 @@ nav#meniu-principal {
           }
           .fa-icon {
             font-size: 1.8rem;
-            margin: 0 auto; 
+            margin: 0 auto;
             display: block; /* Centrare vizuală */
           }
         }
@@ -224,13 +250,15 @@ nav#meniu-principal {
           border: none;
           background-color: #1a1a1a;
           box-shadow: none;
-          
+
           /* Tranziție modificată: opacitate și rotație */
           opacity: 0;
           visibility: hidden;
           transform: rotate(-10deg) translateY(-10px);
-          transition: transform 0.4s ease, opacity 0.4s ease;
-          
+          transition:
+            transform 0.4s ease,
+            opacity 0.4s ease;
+
           /* Hack CSS pentru a ascunde conținutul când nu e vizibil */
           max-height: 0;
           overflow: hidden;
@@ -253,7 +281,17 @@ nav#meniu-principal {
 
     /* Declanșatorul pentru hamburger menu */
     #hamburger-toggle:checked ~ .meniu-lista {
-      display: flex;
+      max-height: 10000px;
+      opacity: 1;
+      visibility: visible;
+      transform: rotate(0deg) translateY(0);
+      animation: activeaza-hover 0s linear 0.8s forwards;
+    }
+
+    @keyframes activeaza-hover {
+      to {
+        pointer-events: auto;
+      }
     }
   }
 }

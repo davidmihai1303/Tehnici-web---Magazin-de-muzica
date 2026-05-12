@@ -9,7 +9,12 @@ body {
   --meniu-hover-bg: var(--culoare-highlight, #5a9075);
   --meniu-hover-text: var(--culoare-secundara, #2d113b);
   /* Gradient pentru efectul hover de pe ecran mare */
-  --gradient-hover: linear-gradient(90deg, var(--meniu-bg) 0%, var(--meniu-bg) 50%, var(--meniu-text) 100%);
+  --gradient-hover: linear-gradient(
+    90deg,
+    var(--meniu-bg) 0%,
+    var(--meniu-bg) 50%,
+    var(--meniu-text) 100%
+  );
 }
 
 /* =========================================================
@@ -94,7 +99,7 @@ nav#meniu-principal .meniu-lista .meniu-item .submeniu {
   top: 100%;
   left: 0;
   width: 100%;
-  min-width: 220px;
+  min-width: 100%;
   background-color: var(--meniu-hover-bg);
   border: 2px solid var(--meniu-bg);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -153,14 +158,23 @@ nav#meniu-principal .meniu-lista .meniu-item:hover > .submeniu {
     color: var(--meniu-text);
     font-size: 1.5rem;
     cursor: pointer;
-    text-align: right;
+    text-align: left;
   }
   nav#meniu-principal {
     /* Ascundem meniul inițial */
   }
   nav#meniu-principal .meniu-lista {
-    display: none;
+    /* Dezactivam animatiile sub-meniului pana cand tranzitia meniului este completă */
+    pointer-events: none;
+    display: flex;
     flex-direction: column;
+    max-height: 0;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transform: rotate(-90deg) translateY(0px);
+    transform-origin: top left;
+    transition: max-height 0.5s ease, opacity 0.5s ease, transform 0.8s linear, visibility 0.5s;
   }
   nav#meniu-principal .meniu-lista .meniu-item {
     width: 100%;
@@ -229,6 +243,15 @@ nav#meniu-principal .meniu-lista .meniu-item:hover > .submeniu {
     /* Declanșatorul pentru hamburger menu */
   }
   nav#meniu-principal #hamburger-toggle:checked ~ .meniu-lista {
-    display: flex;
+    max-height: 10000px;
+    opacity: 1;
+    visibility: visible;
+    transform: rotate(0deg) translateY(0);
+    animation: activeaza-hover 0s linear 0.8s forwards;
+  }
+  @keyframes activeaza-hover {
+    to {
+      pointer-events: auto;
+    }
   }
 }/*# sourceMappingURL=meniu.css.map */
