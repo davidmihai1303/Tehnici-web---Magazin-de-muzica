@@ -147,38 +147,6 @@ img {
   padding: var(--padding-zone);
 }
 
-#welcome {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-areas:
-    "w1 . w2"
-    "w3 w3 w3"
-    "w4 w4 w4";
-  gap: 0;
-}
-
-#welcome #container-1-1 {
-  grid-area: w1;
-}
-
-#welcome #container-1-2 {
-  grid-area: w2;
-}
-
-#welcome #container-1-3 {
-  grid-area: w3;
-}
-
-#welcome #container-1-3 picture,
-figcaption {
-  display: flex;
-  justify-content: center;
-}
-
-#welcome #container-1-4 {
-  grid-area: w4;
-}
-
 #welcome img {
   width: 60%;
   height: auto;
