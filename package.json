@@ -1,0 +1,32 @@
+{
+  "name": "the-sound-forge",
+  "version": "1.0.0",
+  "description": "Magazin online de instrumente muzicale",
+  "keywords": [
+    "magazin",
+    "muzica",
+    "instrumente",
+    "chitara",
+    "pian",
+    "tobe"
+  ],
+  "homepage": "https://github.com/davidmihai1303/Tehnici-web---Magazin-de-muzica#readme",
+  "bugs": {
+    "url": "https://github.com/davidmihai1303/Tehnici-web---Magazin-de-muzica/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davidmihai1303/Tehnici-web---Magazin-de-muzica.git"
+  },
+  "license": "ISC",
+  "author": "David Mihailescu",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ejs": "^5.0.2",
+    "express": "^5.2.1"
+  }
+}
