@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="ro">
+
+<head>
+  <%- include('../fragmente/head') %>
+    <meta name="description"
+      content="Oferim o gamă variată de instrumente și accesorii pentru muzicienii de toate nivelurile, la cele mai bune prețuri din București.">
+    <meta name="keywords"
+      content="instrumente, muzica, chitara, bucuresti, vinyl, accesorii, studio, scena, boxe, mixere, microfoane, amplificator, corzi, pene, bețe de tobă, acordoare, cabluri">
+    <title>The Sound Forge</title>
+</head>
+
+<body>
+
+  <%- include('../fragmente/header') %>
+
+    <main> <!--  comentariu -->
+      <!-- Cerința 6 -->
+      <div id="grid-pagina">
+        <div id="container-1">
+          <section id="welcome">
+            <!-- Cerința 7 -->
+
+            <div>
+              <hgroup>
+                <h1>The Sound Forge</h1>
+              </hgroup>
+            </div>
+            <p>Cel mai complet magazin de instrumente muzicale din București</p>
+            <p>Ip: <%- locals.ip %> </p>
+
+            <!-- Cerința 3 -->
+            <div>
+              <p class="intro">Vă mulțumim că ați ales site-ul nostru. Aici găsiți o gamă variată de <b>instrumente</b>
+                de
+                <b>muzică</b> și echipamente profesionale.
+              </p>
+
+              <div class="intro-oferte">
+                <div>Chitare</div>
+                <div>Vinyl-uri</div>
+                <div>Tobe</div>
+                <div>Mixere</div>
+                <div>Boxe</div>
+              </div>
+            </div>
+
+            <div>
+              <p>Fie că vă pregătiți pentru o sesiune în <b>studio</b> sau pentru un concert pe
+                <b>scenă</b>, livrăm rapid orice <b>accesorii</b> direct la domiciliul dumneavoastră.
+              </p>
+            </div>
+
+            <!-- Cerința 11 -->
+            <div>
+              <figure>
+                <picture>
+                  <source srcset="/resurse/imagini/instrumente-mic.jpg" media="(max-width:700px)">
+                  <source srcset="/resurse/imagini/instrumente-mediu.jpg" media="(max-width:1200px)">
+                  <img src="/resurse/imagini/instrumente-mare.jpg" alt="Selecție instrumente muzicale"
+                    title="Descoperă colecția noastră de instrumente">
+                </picture>
+                <figcaption>Magazinul nostru oferă o gamă largă de instrumente muzicale pentru toate nivelurile de
+                  experiență.</figcaption>
+              </figure>
+            </div>
+          </section>
+        </div>
+
+        <div id="container-8">
+          <section id="produse">
+            <h2>Produsele noastre</h2>
+            <p>Vă oferim o gamă variată de instrumente muzicale pentru toate preferințele.</p>
+            <section>
+              <h3>Chitare</h3>
+              <p>La noi găsiți cele mai rezonante chitare, oferind acel sunet <i lang="en">vintage</i> autentic, fie că
+                sunteți la început sau profesionist!</p>
+              <p>Avem chitare:</p>
+              <ul>
+                <li>&#9835; acustice</li>
+                <li>&#9835; clasice</li>
+                <li>&#9835; electrice</li>
+                <li>&#9835; bass</li>
+                <li>&#9835; electro-acustice</li>
+              </ul>
+            </section>
+            <section>
+              <h3>Tobe și Percuție</h3>
+              <p>Oferim seturi complete de tobe plus accesorii individuale.</p>
+              <ul>
+                <li>&#9835; tobe acustice</li>
+                <li>&#9835; obe electronice</li>
+                <li>&#9835; cinele</li>
+                <li>&#9835; pedale</li>
+                <li>&#9835; bețe de tobă</li>
+              </ul>
+            </section>
+
+            <section>
+              <h3>Echipamente de Studio</h3>
+              <p>Avem tot ce îți trebuie pentru înregistrări perfecte:</p>
+              <ul>
+                <li>&#9835; mixere</li>
+                <li>&#9835; microfoane</li>
+                <li>&#9835; căști de studio</li>
+                <li>&#9835; interfețe audio</li>
+                <li>&#9835; monitoare de studio</li>
+              </ul>
+            </section>
+          </section>
+        </div>
+
+        <div id="container-2">
+          <section id="orar">
+            <!-- Cerința 15 -->
+            <h2>Orar</h2>
+            <div class="table-responsive">
+              <table id="tab-orar">
+                <caption>Program de funcționare și orar</caption>
+                <thead>
+                  <tr>
+                    <th>Tip zi</th>
+                    <th>Zi</th>
+                    <th>Interval dimineata</th>
+                    <th>Pauza de masa</th>
+                    <th>Interval seară</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td rowspan="5">Zile<br>Lucrătoare</td>
+                    <td>Luni</td>
+                    <td>10-12</td>
+                    <td>12-14</td>
+                    <td>14-20</td>
+                  </tr>
+                  <tr class="rand-decalat">
+                    <td>Marti</td>
+                    <td>9-12</td>
+                    <td>12-14</td>
+                    <td>14-21</td>
+                  </tr>
+                  <tr class="rand-decalat">
+                    <td>Miercuri</td>
+                    <td>9-11</td>
+                    <td>11-13</td>
+                    <td>14-21</td>
+                  </tr>
+                  <tr class="rand-decalat">
+                    <td>Joi</td>
+                    <td>9-11</td>
+                    <td>11-13</td>
+                    <td>14-21</td>
+                  </tr>
+                  <tr class="rand-decalat">
+                    <td>Vineri</td>
+                    <td>9-12</td>
+                    <td>12-14</td>
+                    <td>14-19</td>
+                  </tr>
+                  <tr>
+                    <td rowspan="2">Weekend</td>
+                    <td>Sambata</td>
+                    <td>10-12</td>
+                    <td>12-13</td>
+                    <td>13-16</td>
+                  </tr>
+                  <tr class="rand-decalat">
+                    <td>Duminica</td>
+                    <td>10-14</td>
+                    <td>-</td>
+                    <td>inchis</td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td colspan="5">Închis cu ocazia sărbătorilor legale, sau, când ne e mai lene așa.</td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
+            <p><strong>Atentie!!!</strong> in prima zi a lunii facem inventar.</p>
+          </section>
+        </div>
+
+        <div id="container-3">
+          <section>
+            <p> Aenean facilisis feugiat semper. Etiam eu nisi nulla. Curabitur ac tellus sem. Proin porttitor sed enim
+              eu
+              blandit. In porta feugiat ligula semper fringilla. Cras tincidunt libero magna, nec euismod ipsum iaculis
+              vitae. Curabitur ac magna ac arcu accumsan rutrum sit amet sed dui. In hac habitasse platea dictumst.
+              Aenean
+              vulputate, leo nec tincidunt egestas, orci nunc volutpat magna, sit amet tincidunt ex metus sed purus.
+              Pellentesque pharetra erat diam, id pellentesque ligula iaculis eget.
+              sodales sodales, magna sem pharetra quam, nec facilisis leo risus non sem. Fusce libero elit, scelerisque
+              vel
+              erat eleifend, dictum cursus nisl. Ut lacinia leo a enim sagittis aliquet.</p>
+          </section>
+        </div>
+
+        <div id="container-5">
+          <section id="promotii">
+            <h2>Promoții și oferte speciale</h2>
+
+            <!-- Cerința 9 -->
+            <blockquote>
+              "O chitară bună îți schimbă percepția asupra muzicii, iar o ofertă bună îți protejează portofelul!"
+              <em>Echipa Magazinului</em>
+            </blockquote>
+
+            <article>
+              <!-- Cerința 12 -->
+              <h3 class="titlu">Super oferta de weekend la Chitare</h3>
+              <p><b>Magazinul de Muzică</b> oferă <b>reduceri de <s>10%</s> <ins>15%</ins></b> pentru toate
+                instrumentele
+                cu coarde cumpărate în intervalul 10:00 - 14:00.</p>
+              <p>Oferta este valabilă doar în zilele de sâmbătă și duminică la sediul nostru marcat cu <abbr
+                  title="Sediul Central București">SCB</abbr>.</p>
+            </article>
+          </section>
+        </div>
+
+        <div id="container-7">
+          <section id="resurse-utile">
+            <!-- Cerința 13 -->
+            <h2>Resurse și Linkuri Utile</h2>
+            <p>Consultați site-ul nostru partener pentru <a href="https://www.musicradar.com/" target="_blank">mai multe
+                recenzii de instrumente</a>.</p>
+            <p>Pentru informații detaliate despre aplicațiile protocolului MIDI, accesați:<br>
+              <a
+                href="https://en.wikipedia.org/wiki/Musical_Instrument_Digital_Interface#Applications">https://en<wbr>.wikipedia<wbr>.org/<wbr>wiki/<wbr>Musical_Instrument_Digital_Interface<wbr>#Applications</a>
+            </p>
+            <p>Apasă pe imaginea de mai jos pentru a o vedea mărită:</p>
+            <p>
+              <a href="/resurse/imagini/instrumente-mediu.jpg" title="Vezi imaginea mărită">
+                <img src="/resurse/imagini/instrumente-mic.jpg" alt="Instrumente">
+              </a>
+            </p>
+            <p>
+              <a href="/resurse/imagini/instrumente.jpg" download="instrumente_nou.jpg">Descarcă o imagine cu
+                instrumente</a>
+            </p>
+          </section>
+        </div>
+
+        <div id="container-4">
+          <section id="anunturi">
+            <!-- Cerința 10 -->
+            <h2>Evenimente și Anunțuri</h2>
+            <ul>
+              <li>
+                <time datetime="2026-05-15T18:00">15 mai ora 18:00</time>,
+                <b>Lansare Album Vinyl</b> - Audiție în avanpremieră a noului album. Oferim câte o pană de chitară cadou
+                primilor 20 de participanți în funcție de stocul disponibil.
+              </li>
+
+              <li>
+                <time datetime="2026-06-10T14:30">10 iunie ora 14:30</time>,
+                <b>Workshop de Tobe</b> - Demonstrație live la setul de tobe acustice. Intrarea este liberă pentru toți
+                pasionații de percuție.
+              </li>
+
+              <li>
+                <time datetime="2026-07-20T10:00">20 iulie ora 10:00</time>,
+                <b>Târg de Instrumente Vintage</b> - Expoziție și vânzare de chitare clasice, sintetizatoare vechi și
+                accesorii rare.
+              </li>
+            </ul>
+          </section>
+        </div>
+
+        <div id="container-6">
+          <section id="index-intrebari">
+            <!-- Cerința 16 -->
+            <h2>Întrebări frecvente și Informații</h2>
+            <details>
+              <summary>Oferiți garanție pentru instrumente?</summary>
+              <p>Da! Toate instrumentele noi vin cu o garanție de 24 de luni.</p>
+            </details>
+            <details>
+              <summary>Se pot testa instrumentele în magazin?</summary>
+              <p>Absolut. Avem cabine izolate fonic pentru testarea amplificatoarelor și chitarelor.</p>
+            </details>
+            <details>
+              <summary>Faceți și reparații / mentenanță?</summary>
+              <p>Da, avem un lutier autorizat în cadrul magazinului nostru pentru mentenanță periodică.</p>
+            </details>
+
+            <h3>Grad de ocupare și Stocuri</h3>
+            <!-- Cerința 17 -->
+            <p>Aglomerație în magazin în acest moment (capacitate clienți):
+              <meter value="15" min="0" max="100" low="30" high="80" optimum="10" title="15% ocupat">15%</meter>
+            </p>
+            <p>Disponibilitate stoc chitare electrice (modele populare):
+              <meter value="95" min="0" max="100" low="30" high="80" optimum="90" title="95% disponibil">95%</meter>
+            </p>
+          </section>
+        </div>
+
+      </div>
+
+
+      <section id="recenzii-video">
+        <!-- Cerința 14 -->
+        <h2>Recenzii Video Echipamente</h2>
+        <p>Urmăriți câteva demonstrații ale celor mai populare instrumente din magazinul nostru.</p>
+        <div class="container-iframe">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/U7Xal9EvSpM?si=oaYUHe2Dy9GA2Oo1"
+            name="ifr-video" title="YouTube video player" allowfullscreen></iframe>
+          <div class="taburi-iframe">
+            <a href="https://www.youtube.com/embed/U7Xal9EvSpM?si=oaYUHe2Dy9GA2Oo1" target="ifr-video">Demonstrație
+              Chitară Fender (Revenire la video inițial)</a>
+            <a href="https://www.youtube.com/embed/K2eV1h2-nCo?si=pMzNUw6e90c2vycr" target="ifr-video">Review Claviaturi
+              Yamaha</a>
+            <a href="https://www.youtube.com/embed/TJfoMew1GfQ?si=hWTKfSETnomIhrTb" target="ifr-video">Review Tobe
+              Roland</a>
+          </div>
+
+        </div>
+      </section>
+
+    </main>
+
+    <%- include('../fragmente/footer') %>
+
+</body>
+
+</html>

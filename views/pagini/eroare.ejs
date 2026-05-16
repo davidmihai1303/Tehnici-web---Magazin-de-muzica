@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta name="description"
+        content="Eroare - The Sound Forge. Magazinul tău de instrumente muzicale.">
+    <meta name="keywords" content="eroare, instrumente, muzica, chitara, vinyl, accesorii, the sound forge">
+    <title>The Sound Forge - Eroare</title>
+    <link rel="stylesheet" type="text/css" href="/resurse/css/eroare.css">
+    <%- include("../fragmente/head.ejs"); %>
+
+
+</head>
+
+<body>
+
+    <%- include("../fragmente/header.ejs"); %>
+
+        <main>
+            <div id="err-coloane">
+                <div id="err-imag">
+                    <img src="<%- locals.imagine %>" />
+                </div>
+                <section>
+                    <h2><%- locals.titlu %></h2>
+                    <p><%- locals.text %></p>
+                </section>
+            </div>
+        </main>
+
+        <%- include("../fragmente/footer.ejs"); %>
+
+
+</body>
+
+</html>
