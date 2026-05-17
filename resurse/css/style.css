@@ -439,3 +439,44 @@ img {
 #link-top:hover .triunghi {
   color: var(--culoare-highlight);
 }
+
+/* --- CERINȚE LINKURI --- */
+/* Linkurile vizitate vor avea o culoare diferită */
+a:not(#recenzii-video a):not(footer a):visited {
+  color: var(--culoare-secundara);
+}
+
+/* Linkurile externe (încep cu http) */
+a[href^="http"]:not(#recenzii-video a):not(footer a)::before {
+  content: "⮳ ";
+  font-size: 1.5em;
+}
+
+/* La hover pe link extern, simbolul își schimbă culoarea */
+a[href^="http"]:not(#recenzii-video a):not(footer a):hover::before {
+  color: var(--culoare-accent);
+}
+
+/* Linkurile din interiorul main (exceptând recenzii-video) */
+main a:not(#recenzii-video a) {
+  /* Pata de culoare: gradient radial */
+  background-image: radial-gradient(circle,
+      var(--culoare-highlight) 0%,
+      var(--culoare-highlight) 40%,
+      transparent 80%,
+      transparent 100%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 0;
+  transition: background-size 0.4s ease;
+}
+
+/* La aducerea cursorului, pata crește */
+main a:not(#recenzii-video a):hover {
+  background-size: 100%;
+}
+
+/* La click, apare border-ul */
+main a:not(#recenzii-video a):active {
+  border: 2px solid var(--culoare-principala);
+}
