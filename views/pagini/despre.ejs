@@ -8,6 +8,7 @@
         <meta name="keywords"
             content="instrumente, muzica, chitara, bucuresti, vinyl, accesorii, studio, scena, boxe, mixere, microfoane, amplificator, corzi, pene, bețe de tobă, acordoare, cabluri">
         <title>A doua pagina</title>
+        <link rel="stylesheet" href="/resurse/css/video.css">
 </head>
 
 <body>
@@ -15,7 +16,17 @@
     <%- include('../fragmente/header') %>
 
         <main>
-            A doua pagina
+            <video id="video-principal" poster="/resurse/video/acordeon.png" controls preload="auto">
+
+                <source src="/resurse/video/cal_acordeon.mp4" type="video/mp4">
+                <source src="/resurse/video/cal_acordeon.ogg" type="video/ogg">
+
+                <track src="/resurse/video/subtitrari-ro.vtt" kind="subtitles" srclang="ro" label="Română" default>
+
+                <track src="/resurse/video/subtitrari-en.vtt" kind="subtitles" srclang="en" label="English">
+
+                Browserul dvs. nu suportă elementul video HTML5.
+            </video>
         </main>
 
         <%- include('../fragmente/footer') %>
