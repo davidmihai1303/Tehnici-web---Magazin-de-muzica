@@ -43,6 +43,84 @@ app.get(["/", "/index", "/home"], function (req, res) {
   });
 });
 
+function verificareErori() {
+  const caleFisier = path.join(__dirname, "resurse/json/erori.json");
+
+  // Nu există fisierul erori.json
+  if (!fs.existsSync(caleFisier)) {
+    console.error("EROARE CRITICĂ: Nu există fișierul erori.json! Aplicația se va închide.");
+    process.exit();
+  }
+
+  const continutString = fs.readFileSync(caleFisier, "utf-8");
+
+  // Verificare proprietăți duplicate pe string (în cadrul unui obiect)
+  let blocks = continutString.split('{');
+  for (let i = 1; i < blocks.length; i++) {
+    let objectBody = blocks[i].split('}')[0];
+    let keys = [...objectBody.matchAll(/"([^"]+)"\s*:/g)].map(m => m[1]);
+    let uniqueKeys = new Set(keys);
+    if (keys.length !== uniqueKeys.size) {
+      console.error("EROARE: În erori.json există un obiect cu o proprietate specificată de mai multe ori (ex: titlu dublat). Verificați fișierul!");
+    }
+  }
+
+  let erori;
+  try {
+    erori = JSON.parse(continutString);
+  } catch (e) {
+    console.error("EROARE: Fișierul erori.json nu are un format JSON valid.");
+    return;
+  }
+
+  // (0.025) Verificare proprietăți principale lipsă
+  if (!erori.info_erori || !erori.cale_baza || !erori.eroare_default) {
+    console.error("EROARE: Lipsesc proprietăți principale (info_erori, cale_baza sau eroare_default) din erori.json.");
+  } else {
+    // (0.025) Verificare proprietăți eroare_default
+    if (!erori.eroare_default.titlu || !erori.eroare_default.text || !erori.eroare_default.imagine) {
+      console.error("EROARE: Pentru eroare_default lipsește una dintre proprietățile: titlu, text sau imagine.");
+    }
+
+    // (0.025) Verificare cale_baza
+    const caleFolder = path.join(__dirname, erori.cale_baza);
+    if (!fs.existsSync(caleFolder)) {
+      console.error(`EROARE: Folderul specificat în cale_baza ("${erori.cale_baza}") nu există în sistemul de fișiere.`);
+    } else {
+      // (0.05) Verificare existență imagini în sistemul de fișiere
+      let imaginiDeVerificat = [erori.eroare_default.imagine];
+      for (let err of erori.info_erori) {
+        if (err.imagine) imaginiDeVerificat.push(err.imagine);
+      }
+
+      for (let img of imaginiDeVerificat) {
+        if (!fs.existsSync(path.join(caleFolder, img))) {
+          console.error(`EROARE: Fișierul imagine ("${img}") asociat unei erori nu există în folderul "${erori.cale_baza}".`);
+        }
+      }
+    }
+
+    // (0.15) Verificare identificatori duplicați în vectorul de erori
+    let contorId = {};
+    for (let err of erori.info_erori) {
+      if (!contorId[err.identificator]) contorId[err.identificator] = [];
+      contorId[err.identificator].push(err);
+    }
+
+    for (let id in contorId) {
+      if (contorId[id].length > 1) {
+        console.error(`EROARE: Există mai multe erori cu același identificator (${id}). Detalii erori:`);
+        for (let err of contorId[id]) {
+          let copie = { ...err };
+          delete copie.identificator;
+          console.error(JSON.stringify(copie));
+        }
+      }
+    }
+  }
+}
+verificareErori();
+
 function initErori() {
   let continut = fs.readFileSync(path.join(__dirname, "resurse/json/erori.json")).toString("utf-8");
   let erori = obGlobal.obErori = JSON.parse(continut)
