@@ -43,6 +43,7 @@ app.get(["/", "/index", "/home"], function (req, res) {
   });
 });
 
+// Bonus
 function verificareErori() {
   const caleFisier = path.join(__dirname, "resurse/json/erori.json");
 
@@ -73,24 +74,25 @@ function verificareErori() {
     return;
   }
 
-  // (0.025) Verificare proprietăți principale lipsă
+  // Verificare proprietăți principale lipsă
   if (!erori.info_erori || !erori.cale_baza || !erori.eroare_default) {
     console.error("EROARE: Lipsesc proprietăți principale (info_erori, cale_baza sau eroare_default) din erori.json.");
   } else {
-    // (0.025) Verificare proprietăți eroare_default
+    // Verificare proprietăți eroare_default
     if (!erori.eroare_default.titlu || !erori.eroare_default.text || !erori.eroare_default.imagine) {
       console.error("EROARE: Pentru eroare_default lipsește una dintre proprietățile: titlu, text sau imagine.");
     }
 
-    // (0.025) Verificare cale_baza
+    // Verificare cale_baza
     const caleFolder = path.join(__dirname, erori.cale_baza);
     if (!fs.existsSync(caleFolder)) {
       console.error(`EROARE: Folderul specificat în cale_baza ("${erori.cale_baza}") nu există în sistemul de fișiere.`);
     } else {
-      // (0.05) Verificare existență imagini în sistemul de fișiere
-      let imaginiDeVerificat = [erori.eroare_default.imagine];
+      // Verificare existență imagini în sistemul de fișiere
+      let imaginiDeVerificat = new Set([erori.eroare_default.imagine]);
       for (let err of erori.info_erori) {
-        if (err.imagine) imaginiDeVerificat.push(err.imagine);
+        if (err.imagine)
+          imaginiDeVerificat.add(err.imagine);
       }
 
       for (let img of imaginiDeVerificat) {
@@ -100,10 +102,11 @@ function verificareErori() {
       }
     }
 
-    // (0.15) Verificare identificatori duplicați în vectorul de erori
+    // Verificare identificatori duplicați în vectorul de erori
     let contorId = {};
     for (let err of erori.info_erori) {
-      if (!contorId[err.identificator]) contorId[err.identificator] = [];
+      if (!contorId[err.identificator])
+        contorId[err.identificator] = [];
       contorId[err.identificator].push(err);
     }
 
@@ -149,7 +152,6 @@ function afisareEroare(res, identificator, titlu, text, imagine) {
     text: text || eroare?.text || errDefault.text,
   });
 }
-
 
 app.get("/eroare", function (req, res) {
   res.render("pagini/eroare", {

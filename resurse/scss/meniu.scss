@@ -1,24 +1,15 @@
-/* =========================================================
-   Variabile CSS pentru a permite schimbarea   ușoară a temei
-   Acestea ar trebui incluse în body, ca în fișierul original
-   ========================================================= */
 body {
   --meniu-bg: var(--culoare-principala, #113b27);
   --meniu-text: var(--culoare-deschisa, #baad93);
   --meniu-hover-bg: var(--culoare-highlight, #5a9075);
   --meniu-hover-text: var(--culoare-secundara, #2d113b);
   /* Gradient pentru efectul hover de pe ecran mare */
-  --gradient-hover: linear-gradient(
-    90deg,
-    var(--meniu-bg) 0%,
-    var(--meniu-bg) 50%,
-    var(--meniu-text) 100%
-  );
+  --gradient-hover: linear-gradient(90deg,
+      var(--meniu-bg) 0%,
+      var(--meniu-bg) 50%,
+      var(--meniu-text) 100%);
 }
 
-/* =========================================================
-   Clase Mixin / Extend pentru a reduce codul repetitiv
-   ========================================================= */
 %flex-center-vertical {
   display: flex;
   align-items: center;
@@ -30,9 +21,6 @@ body {
   padding: 0;
 }
 
-/* =========================================================
-   Stilizarea Meniului (Ecran Mare Implicit)
-   ========================================================= */
 nav#meniu-principal {
   background-color: var(--meniu-bg);
   border-radius: 8px;
@@ -65,12 +53,14 @@ nav#meniu-principal {
         height: 5px;
         background-image: var(--gradient-hover);
         background-size: 200% 100%;
-        background-position: 0 0; /* Pornește invizibilă (la fel ca fundalul) */
+        background-position: 0 0;
+        /* Pornește invizibilă (la fel ca fundalul) */
         transition: background-position 0.5s ease-in-out;
       }
 
       &:hover::after {
-        background-position: 100% 0; /* Plimbarea gradientului la hover */
+        background-position: 100% 0;
+        /* Plimbarea gradientului la hover */
       }
 
       .meniu-link {
@@ -91,14 +81,11 @@ nav#meniu-principal {
       }
 
       /* Stilizarea la hover a butonului principal */
-      &:hover > .meniu-link {
+      &:hover>.meniu-link {
         color: var(--meniu-hover-text);
         background-color: rgba(255, 255, 255, 0.1);
       }
 
-      /* --------------------------------------
-         Submeniul pentru Ecran Mare
-         -------------------------------------- */
       .submeniu {
         @extend %reset-list;
         position: absolute;
@@ -137,7 +124,8 @@ nav#meniu-principal {
           }
         }
       }
-      &:hover > .submeniu {
+
+      &:hover>.submeniu {
         transform: scaleY(1);
         visibility: visible;
       }
@@ -145,9 +133,6 @@ nav#meniu-principal {
   }
 }
 
-/* =========================================================
-   Ecran Mediu (Tablete): 768px - 1024px
-   ========================================================= */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   nav#meniu-principal {
     .meniu-lista {
@@ -171,11 +156,9 @@ nav#meniu-principal {
   }
 }
 
-/* =========================================================
-   Ecran Mic (Mobil): max-width: 767px
-   ========================================================= */
 @media screen and (max-width: 767px) {
   nav#meniu-principal {
+
     /* Afișăm butonul hamburger */
     #hamburger-label {
       display: block;
@@ -223,10 +206,12 @@ nav#meniu-principal {
           .nav-text {
             display: none;
           }
+
           .fa-icon {
             font-size: 1.8rem;
             margin: 0 auto;
-            display: block; /* Centrare vizuală */
+            display: block;
+            /* Centrare vizuală */
           }
         }
 
@@ -236,7 +221,7 @@ nav#meniu-principal {
         }
 
         /* Hover general ecran mic (simplu) */
-        &:hover > .meniu-link {
+        &:hover>.meniu-link {
           background-color: var(--meniu-hover-bg);
           color: var(--meniu-bg);
         }
@@ -270,8 +255,9 @@ nav#meniu-principal {
         }
 
         /* Când dăm hover/click pe o opțiune care are submeniu pe mobil */
-        &:hover > .submeniu {
-          max-height: 1000px; /* suficient de mare */
+        &:hover>.submeniu {
+          max-height: 1000px;
+          /* suficient de mare */
           opacity: 1;
           visibility: visible;
           transform: rotate(0deg) translateY(0);
@@ -280,7 +266,7 @@ nav#meniu-principal {
     }
 
     /* Declanșatorul pentru hamburger menu */
-    #hamburger-toggle:checked ~ .meniu-lista {
+    #hamburger-toggle:checked~.meniu-lista {
       max-height: 10000px;
       opacity: 1;
       visibility: visible;

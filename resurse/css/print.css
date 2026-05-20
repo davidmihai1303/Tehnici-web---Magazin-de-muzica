@@ -1,11 +1,4 @@
-/* ============================================================
-   STILURI PENTRU PRINTARE
-   ============================================================ */
 @media print {
-
-  /* ===========================================================
-     1. MARJE PAGINI STÂNGA / DREAPTA
-     =========================================================== */
   @page :left {
     margin-left: 2.5cm;
     margin-right: 0.5cm;
@@ -20,12 +13,6 @@
   @page :first {
     margin-top: 3cm;
   }
-
-  /* ===========================================================
-     2. BANNER - "Acesta este un proiect școlar!"
-     Redat prin body::before (element din footer ascuns).
-     width: 80vw = 80% din lătimea FIZICĂ a paginii.
-     =========================================================== */
 
   /* Resetam padding-ul lui body: fara reset, 80vw > body-width
      si margin:auto nu poate centra corect */
@@ -48,14 +35,6 @@
     box-sizing: border-box;
   }
 
-  /* Ascundem paragraful original din footer */
-  #banner-scolar {
-    display: none;
-  }
-
-  /* ===========================================================
-     3. ASCUNDEREA ELEMENTELOR MEDIA ȘI A DEPENDENTELOR LOR
-     =========================================================== */
   img,
   video,
   picture,
@@ -75,12 +54,6 @@
     display: none;
   }
 
-  /* ===========================================================
-     4. GRIDUL AFIȘAT CA BLOCK
-     (celulele nu se mai secționează între pagini)
-     #container-1 NU primeşte break-inside:avoid, altfel h1
-     ar fi mutat pe pagina 2 împreună cu tot containerul.
-     =========================================================== */
   #grid-pagina {
     display: block;
   }
@@ -107,22 +80,12 @@
     box-shadow: none !important;
   }
 
-  /* ===========================================================
-     5. LINKURI CA TEXT NORMAL
-     =========================================================== */
   a,
   a:visited,
   a:link {
     color: inherit;
     text-decoration: none;
   }
-
-  /* ===========================================================
-     6. H1 (TITLUL SITE-ULUI) — PRIMA PAGINĂ
-     Centrat vertical și orizontal, subliniat, 2.5× font-size html.
-     Containerul (#container-1-1) ocupă toata înălțimea primei pagini.
-     Meniul este ascuns. Page break după h1, înainte de footer.
-     =========================================================== */
 
   /* Ascundem meniul de navigatie */
   header,
@@ -131,9 +94,6 @@
     display: none;
   }
 
-  /* Primul div din #welcome (cel with h1) umple prima pagina si centreaza h1 in el.
-     margin-top negativ compenseaza spatiul luat de banner (body::before ~1cm)
-     si de @page :first margin-top (3cm) → h1 ajunge la centrul real al paginii */
   #welcome>div:first-child {
     min-height: 100vh;
     display: flex;
@@ -146,7 +106,6 @@
     break-after: page;
   }
 
-  /* H1: stilizat conform cerintelor */
   h1 {
     font-size: 2.5em;
     /* 2.5 ori font-size-ul html-ului */
@@ -163,10 +122,6 @@
     page-break-before: always;
   }
 
-  /* ===========================================================
-     7. WATERMARK PE FIECARE PAGINĂ
-     100px lățime, 2cm înălțime, border dublu, opacitate 0.65
-     =========================================================== */
   body::after {
     content: "David Mihăilescu";
     position: fixed;
