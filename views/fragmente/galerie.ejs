@@ -1,19 +1,24 @@
+<link rel="stylesheet" href="/resurse/css/galerie.css">
 <section id="galerie-statica">
-  <h2>Galerie</h2>
+  <h2>Galerie chitare</h2>
   <div id="grid-galerie">
     <% const vectLuni=[ "ianuarie" , "februarie" , "martie" , "aprilie" , "mai" , "iunie" , "iulie" , "august"
       , "septembrie" , "octombrie" , "noiembrie" , "decembrie" ]; %>
-      <% const lunaCurenta=vectLuni[new Date().getMonth()]; %>
-        <% for (let imag of locals.imagini) { %>
-          <% if (imag.luni?.includes(lunaCurenta)) { %>
-            <figure>
-              <picture>
-                <source srcset="<%- imag.fisier_mediu %>" media="(max-width:1100px)">
-                <img src="<%- imag.cale_fisier %>" alt="instrumente">
-              </picture>
-              <figcaption><%- imag.titlu %></figcaption>
-            </figure>
-            <% } %>
-              <% } %>
+      <%# const lunaCurenta=vectLuni[new Date().getMonth()]; %>
+        <% const lunaCurenta=vectLuni[new Date("2026-12-25").getMonth()]; // Testăm cu Decembrie în loc de luna curentă
+          %>
+          <% let contor=0; %>
+            <% for (let imag of locals.imagini) { %>
+              <% if (contor < 12 && imag.luni?.includes(lunaCurenta)) { %>
+                <figure>
+                  <picture>
+                    <source srcset="<%- imag.fisier_mediu %>" media="(max-width:1100px)">
+                    <img src="<%- imag.cale_fisier %>" alt="<%- imag.alt %>" title="<%- imag.titlu %>">
+                  </picture>
+                  <figcaption><%- imag.text_descriere %></figcaption>
+                </figure>
+                <% contor++; %>
+                  <% } %>
+                    <% } %>
   </div>
 </section>

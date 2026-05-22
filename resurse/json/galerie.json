@@ -3,22 +3,26 @@
 	"imagini": [
 		{
 			"cale_fisier": "chitara1.png",
-			"titlu": "Chitară acustică",
-			"alt": "Chitară acustică",
-			"text_descriere": "O chitară acustică excelentă",
+			"titlu": "Chitară acustică (imagine cu licență)",
+			"alt": "Fotografie cu o chitară acustică",
+			"text_descriere": "O chitară acustică excelentă (imagine cu licență)",
 			"luni": [
 				"ianuarie",
 				"februarie",
 				"martie",
 				"aprilie",
 				"mai",
-				"iunie"
-			]
+				"iunie",
+				"decembrie"
+			],
+			"autor": "Lisa Hall-Wilson",
+			"sursa": "https://commons.wikimedia.org/wiki/File:Taylor_Guitar_leaned_on_stool.jpg",
+			"licenta": "Creative Commons Attribution 2.0"
 		},
 		{
 			"cale_fisier": "chitara2.png",
 			"titlu": "Chitară electrică",
-			"alt": "Chitară electrică",
+			"alt": "Fotografie cu o chitară electrică",
 			"text_descriere": "Chitară electrică rock",
 			"luni": [
 				"iulie",
@@ -26,13 +30,15 @@
 				"septembrie",
 				"octombrie",
 				"noiembrie",
-				"decembrie"
+				"decembrie",
+				"mai",
+				"iunie"
 			]
 		},
 		{
 			"cale_fisier": "chitara3.png",
 			"titlu": "Chitară bass",
-			"alt": "Chitară bass",
+			"alt": "Fotografie cu o chitară bass",
 			"text_descriere": "Chitară bass cu sunet profund",
 			"luni": [
 				"ianuarie",
@@ -40,13 +46,14 @@
 				"mai",
 				"iulie",
 				"septembrie",
-				"noiembrie"
+				"noiembrie",
+				"iunie"
 			]
 		},
 		{
 			"cale_fisier": "chitara4.png",
 			"titlu": "Chitară electro-acustică",
-			"alt": "Chitară electro-acustică",
+			"alt": "Fotografie cu o chitară electro-acustică",
 			"text_descriere": "Chitară versatilă pentru scenă",
 			"luni": [
 				"februarie",
@@ -54,13 +61,14 @@
 				"iunie",
 				"august",
 				"octombrie",
-				"decembrie"
+				"decembrie",
+				"mai"
 			]
 		},
 		{
 			"cale_fisier": "chitara5.png",
 			"titlu": "Chitară clasică",
-			"alt": "Chitară clasică",
+			"alt": "Fotografie cu o chitară clasică",
 			"text_descriere": "Chitară cu corzi de nylon",
 			"luni": [
 				"ianuarie",
@@ -80,31 +88,34 @@
 		{
 			"cale_fisier": "chitara6.png",
 			"titlu": "Chitară semi-acustică",
-			"alt": "Chitară semi-acustică",
+			"alt": "Fotografie cu o chitară semi-acustică",
 			"text_descriere": "Sunet cald de jazz",
 			"luni": [
 				"martie",
 				"iunie",
 				"septembrie",
-				"decembrie"
+				"decembrie",
+				"mai"
 			]
 		},
 		{
 			"cale_fisier": "chitara7.png",
 			"titlu": "Chitară de concert",
-			"alt": "Chitară de concert",
+			"alt": "Fotografie cu o chitară de concert",
 			"text_descriere": "Pentru performanțe live",
 			"luni": [
 				"ianuarie",
 				"aprilie",
 				"iulie",
-				"octombrie"
+				"octombrie",
+				"mai",
+				"iunie"
 			]
 		},
 		{
 			"cale_fisier": "chitara8.png",
 			"titlu": "Ukulele",
-			"alt": "Ukulele",
+			"alt": "Fotografie cu un ukulele",
 			"text_descriere": "Instrument mic, sunet mare",
 			"luni": [
 				"mai",
@@ -116,51 +127,57 @@
 		{
 			"cale_fisier": "chitara9.png",
 			"titlu": "Chitară cu 12 corzi",
-			"alt": "Chitară cu 12 corzi",
+			"alt": "Fotografie cu o chitară cu 12 corzi",
 			"text_descriere": "Sunet bogat și rezonant",
 			"luni": [
 				"septembrie",
 				"octombrie",
-				"noiembrie"
+				"noiembrie",
+				"mai",
+				"iunie"
 			]
 		},
 		{
 			"cale_fisier": "chitara10.png",
 			"titlu": "Chitară solid body",
-			"alt": "Chitară solid body",
+			"alt": "Fotografie cu o chitară solid body",
 			"text_descriere": "Ideală pentru metale grele",
 			"luni": [
 				"decembrie",
 				"ianuarie",
-				"februarie"
+				"februarie",
+				"mai",
+				"iunie"
 			]
 		},
 		{
 			"cale_fisier": "chitara11.png",
 			"titlu": "Chitară hollow body",
-			"alt": "Chitară hollow body",
+			"alt": "Fotografie cu o chitară hollow body",
 			"text_descriere": "Perfectă pentru blues",
 			"luni": [
 				"martie",
 				"aprilie",
-				"mai"
+				"mai",
+				"iunie"
 			]
 		},
 		{
 			"cale_fisier": "chitara12.png",
 			"titlu": "Chitară pentru stângaci",
-			"alt": "Chitară pentru stângaci",
+			"alt": "Fotografie cu o chitară pentru stângaci",
 			"text_descriere": "Design special",
 			"luni": [
 				"iunie",
 				"iulie",
-				"august"
+				"august",
+				"mai"
 			]
 		},
 		{
 			"cale_fisier": "chitara13.png",
 			"titlu": "Chitară vintage",
-			"alt": "Chitară vintage",
+			"alt": "Fotografie cu o chitară vintage",
 			"text_descriere": "Aspect retro și sunet clasic",
 			"luni": [
 				"ianuarie",
@@ -180,7 +197,7 @@
 		{
 			"cale_fisier": "chitara14.png",
 			"titlu": "Chitară modernă",
-			"alt": "Chitară modernă",
+			"alt": "Fotografie cu o chitară modernă",
 			"text_descriere": "Design inovator",
 			"luni": [
 				"ianuarie",
@@ -200,7 +217,7 @@
 		{
 			"cale_fisier": "chitara15.png",
 			"titlu": "Chitară custom",
-			"alt": "Chitară custom",
+			"alt": "Fotografie cu o chitară custom",
 			"text_descriere": "Unicat, făcută la comandă",
 			"luni": [
 				"ianuarie",
