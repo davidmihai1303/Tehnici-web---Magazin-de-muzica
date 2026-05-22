@@ -44,16 +44,11 @@ app.use("/dist", express.static(path.join(__dirname, "node_modules/bootstrap/dis
 // Rută principală
 app.get(["/", "/index", "/home"], function (req, res) {
   res.render("pagini/index", {
-    ip: req.ip
+    ip: req.ip,
+    imagini: obGlobal.obImagini.imagini,
   });
 });
 
-// Bonus
-/**
- * Verifică integritatea și corectitudinea fișierului erori.json.
- * Verifică existența proprietăților obligatorii, a imaginilor asociate erorilor 
- * în sistemul de fișiere și depistează eventualii identificatori sau chei duplicate.
- */
 function verificareErori() {
   const caleFisier = path.join(__dirname, "resurse/json/erori.json");
 
@@ -197,15 +192,13 @@ function initImagini() {
     fs.mkdirSync(caleAbsMediu);
 
   for (let imag of vImagini) {
-    [numeFis, ext] = imag.fisier.split("."); //"ceva.png" -> ["ceva", "png"]
-    let caleFisAbs = path.join(caleAbs, imag.fisier);
+    [numeFis, ext] = imag.cale_fisier.split("."); //"ceva.png" -> ["ceva", "png"]
+    let caleFisAbs = path.join(caleAbs, imag.cale_fisier);
     let caleFisMediuAbs = path.join(caleAbsMediu, numeFis + ".webp");
     sharp(caleFisAbs).resize(300).toFile(caleFisMediuAbs);
     imag.fisier_mediu = path.join("/", caleGalerie, "mediu", numeFis + ".webp")
-    imag.fisier = path.join("/", caleGalerie, imag.fisier)
-
+    imag.cale_fisier = path.join("/", caleGalerie, imag.cale_fisier)
   }
-  // console.log(obGlobal.obImagini)
 }
 initImagini();
 
@@ -259,6 +252,12 @@ fs.watch(obGlobal.folderScss, function (eveniment, numeFis) {
   }
 })
 
+app.get("/chitare", function (req, res) {
+  res.render("pagini/chitare", {
+    imagini: obGlobal.obImagini.imagini,
+  });
+});
+
 app.get("/*pagina", function (req, res) {
   console.log("Cale pagina", req.url);
   //verificam daca este un folder din /resurse
@@ -295,7 +294,6 @@ app.get("/*pagina", function (req, res) {
     }
   }
 });
-
 
 // Pornire server
 app.listen(PORT, () => {

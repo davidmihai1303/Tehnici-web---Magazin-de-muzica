@@ -1,41 +1,221 @@
 {
-	"cale_galerie":"resurse/imagini/galerie",
+	"cale_galerie": "resurse/imagini/galerie",
 	"imagini": [
 		{
-			"fisier":"briose-frisca.png",
-			"descriere":"Brioșe",
-			"luni":["martie","februarie","noiembrie","aprilie", "decembrie","octombrie"]
+			"cale_fisier": "chitara1.png",
+			"titlu": "Chitară acustică",
+			"alt": "Chitară acustică",
+			"text_descriere": "O chitară acustică excelentă",
+			"luni": [
+				"ianuarie",
+				"februarie",
+				"martie",
+				"aprilie",
+				"mai",
+				"iunie"
+			]
 		},
 		{
-			"fisier":"clatite.png",
-			"descriere":"Clătite cu dulceață",
-			"luni":["ianuarie","februarie","iunie","octombrie"]
-			
+			"cale_fisier": "chitara2.png",
+			"titlu": "Chitară electrică",
+			"alt": "Chitară electrică",
+			"text_descriere": "Chitară electrică rock",
+			"luni": [
+				"iulie",
+				"august",
+				"septembrie",
+				"octombrie",
+				"noiembrie",
+				"decembrie"
+			]
 		},
 		{
-			"fisier":"gogosi.png",
-			"descriere":"Gogoși glazurate",
-			"luni":["ianuarie","noiembrie","iunie","martie","aprilie"]
+			"cale_fisier": "chitara3.png",
+			"titlu": "Chitară bass",
+			"alt": "Chitară bass",
+			"text_descriere": "Chitară bass cu sunet profund",
+			"luni": [
+				"ianuarie",
+				"martie",
+				"mai",
+				"iulie",
+				"septembrie",
+				"noiembrie"
+			]
 		},
 		{
-			"fisier":"tort-scortisoara.png",
-			"descriere":"Tort cu scorțisoară",
-			
-			"luni":["noiembrie","aprilie", "decembrie"]
+			"cale_fisier": "chitara4.png",
+			"titlu": "Chitară electro-acustică",
+			"alt": "Chitară electro-acustică",
+			"text_descriere": "Chitară versatilă pentru scenă",
+			"luni": [
+				"februarie",
+				"aprilie",
+				"iunie",
+				"august",
+				"octombrie",
+				"decembrie"
+			]
 		},
 		{
-			"fisier":"prajitura-ciocolata.png",
-			"descriere":"Prăjitură cu ciocolată",
-			
-			"luni":["noiembrie","aprilie", "decembrie","octombrie"]
+			"cale_fisier": "chitara5.png",
+			"titlu": "Chitară clasică",
+			"alt": "Chitară clasică",
+			"text_descriere": "Chitară cu corzi de nylon",
+			"luni": [
+				"ianuarie",
+				"februarie",
+				"martie",
+				"aprilie",
+				"mai",
+				"iunie",
+				"iulie",
+				"august",
+				"septembrie",
+				"octombrie",
+				"noiembrie",
+				"decembrie"
+			]
 		},
 		{
-			"fisier":"tarta-afine.png",
-			"descriere":"Tartă cu afine"
+			"cale_fisier": "chitara6.png",
+			"titlu": "Chitară semi-acustică",
+			"alt": "Chitară semi-acustică",
+			"text_descriere": "Sunet cald de jazz",
+			"luni": [
+				"martie",
+				"iunie",
+				"septembrie",
+				"decembrie"
+			]
 		},
 		{
-			"fisier":"tort-trandafiri.png",
-			"descriere":"Tort special"
+			"cale_fisier": "chitara7.png",
+			"titlu": "Chitară de concert",
+			"alt": "Chitară de concert",
+			"text_descriere": "Pentru performanțe live",
+			"luni": [
+				"ianuarie",
+				"aprilie",
+				"iulie",
+				"octombrie"
+			]
+		},
+		{
+			"cale_fisier": "chitara8.png",
+			"titlu": "Ukulele",
+			"alt": "Ukulele",
+			"text_descriere": "Instrument mic, sunet mare",
+			"luni": [
+				"mai",
+				"iunie",
+				"iulie",
+				"august"
+			]
+		},
+		{
+			"cale_fisier": "chitara9.png",
+			"titlu": "Chitară cu 12 corzi",
+			"alt": "Chitară cu 12 corzi",
+			"text_descriere": "Sunet bogat și rezonant",
+			"luni": [
+				"septembrie",
+				"octombrie",
+				"noiembrie"
+			]
+		},
+		{
+			"cale_fisier": "chitara10.png",
+			"titlu": "Chitară solid body",
+			"alt": "Chitară solid body",
+			"text_descriere": "Ideală pentru metale grele",
+			"luni": [
+				"decembrie",
+				"ianuarie",
+				"februarie"
+			]
+		},
+		{
+			"cale_fisier": "chitara11.png",
+			"titlu": "Chitară hollow body",
+			"alt": "Chitară hollow body",
+			"text_descriere": "Perfectă pentru blues",
+			"luni": [
+				"martie",
+				"aprilie",
+				"mai"
+			]
+		},
+		{
+			"cale_fisier": "chitara12.png",
+			"titlu": "Chitară pentru stângaci",
+			"alt": "Chitară pentru stângaci",
+			"text_descriere": "Design special",
+			"luni": [
+				"iunie",
+				"iulie",
+				"august"
+			]
+		},
+		{
+			"cale_fisier": "chitara13.png",
+			"titlu": "Chitară vintage",
+			"alt": "Chitară vintage",
+			"text_descriere": "Aspect retro și sunet clasic",
+			"luni": [
+				"ianuarie",
+				"februarie",
+				"martie",
+				"aprilie",
+				"mai",
+				"iunie",
+				"iulie",
+				"august",
+				"septembrie",
+				"octombrie",
+				"noiembrie",
+				"decembrie"
+			]
+		},
+		{
+			"cale_fisier": "chitara14.png",
+			"titlu": "Chitară modernă",
+			"alt": "Chitară modernă",
+			"text_descriere": "Design inovator",
+			"luni": [
+				"ianuarie",
+				"februarie",
+				"martie",
+				"aprilie",
+				"mai",
+				"iunie",
+				"iulie",
+				"august",
+				"septembrie",
+				"octombrie",
+				"noiembrie",
+				"decembrie"
+			]
+		},
+		{
+			"cale_fisier": "chitara15.png",
+			"titlu": "Chitară custom",
+			"alt": "Chitară custom",
+			"text_descriere": "Unicat, făcută la comandă",
+			"luni": [
+				"ianuarie",
+				"februarie",
+				"martie",
+				"aprilie",
+				"mai",
+				"iunie",
+				"iulie",
+				"august",
+				"septembrie",
+				"octombrie",
+				"noiembrie",
+				"decembrie"
+			]
 		}
 	]
 }

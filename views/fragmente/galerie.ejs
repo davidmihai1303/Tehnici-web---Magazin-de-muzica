@@ -1,0 +1,19 @@
+<section id="galerie-statica">
+  <h2>Galerie</h2>
+  <div id="grid-galerie">
+    <% const vectLuni=[ "ianuarie" , "februarie" , "martie" , "aprilie" , "mai" , "iunie" , "iulie" , "august"
+      , "septembrie" , "octombrie" , "noiembrie" , "decembrie" ]; %>
+      <% const lunaCurenta=vectLuni[new Date().getMonth()]; %>
+        <% for (let imag of locals.imagini) { %>
+          <% if (imag.luni?.includes(lunaCurenta)) { %>
+            <figure>
+              <picture>
+                <source srcset="<%- imag.fisier_mediu %>" media="(max-width:1100px)">
+                <img src="<%- imag.cale_fisier %>" alt="instrumente">
+              </picture>
+              <figcaption><%- imag.titlu %></figcaption>
+            </figure>
+            <% } %>
+              <% } %>
+  </div>
+</section>
