@@ -16,6 +16,7 @@
 #grid-galerie {
     display: grid;
     gap: 1rem;
+    counter-reset: sectiune-galerie; // Inițializăm counterul pentru galerie
 
     figure {
         margin: 0;
@@ -47,14 +48,25 @@
             color: var(--culoare-secundara);
             font-weight: 600;
             background: rgba(255, 255, 255, 0.85);
-            transform: scale(0);
+            transform: scale(1);
             transform-origin: center center;
-            transition: transform 1.1s ease-in-out;
+
+            .text-figcaption {
+                margin: 0; // Elimină marginea implicită a tagului <p> care strica spațierea jos
+
+                // Pseudo-elementul care adaugă indexul cu litere grecești
+                &::before {
+                    counter-increment: sectiune-galerie; // Incrementăm contorul
+                    content: counter(sectiune-galerie, lower-greek) ") "; // Afișăm indexul grecesc urmat de paranteză
+                }
+
+                transition: transform 1.1s ease-in-out;
+            }
         }
 
         &:hover {
-            figcaption {
-                transform: scale(1);
+            figcaption .text-figcaption {
+                transform: scale(1.7);
             }
 
             picture,

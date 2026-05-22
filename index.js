@@ -191,13 +191,28 @@ function initImagini() {
   if (!fs.existsSync(caleAbsMediu))
     fs.mkdirSync(caleAbsMediu);
 
+  let caleAbsMic = path.join(caleAbs, "mic");
+  if (!fs.existsSync(caleAbsMic))
+    fs.mkdirSync(caleAbsMic);
+
   for (let imag of vImagini) {
     [numeFis, ext] = imag.cale_fisier.split("."); //"ceva.png" -> ["ceva", "png"]
     let caleFisAbs = path.join(caleAbs, imag.cale_fisier);
+    
+    // Generare imagine medie (300px)
     let caleFisMediuAbs = path.join(caleAbsMediu, numeFis + ".webp");
     sharp(caleFisAbs).resize(300).toFile(caleFisMediuAbs);
-    imag.fisier_mediu = path.join("/", caleGalerie, "mediu", numeFis + ".webp")
-    imag.cale_fisier = path.join("/", caleGalerie, imag.cale_fisier)
+    imag.fisier_mediu = path.join("/", caleGalerie, "mediu", numeFis + ".webp");
+
+    // Generare imagine mică (150px)
+    let caleFisMicAbs = path.join(caleAbsMic, numeFis + ".webp");
+    sharp(caleFisAbs).resize(150).toFile(caleFisMicAbs);
+    imag.fisier_mic = path.join("/", caleGalerie, "mic", numeFis + ".webp");
+
+    // Setează proprietatea alt cu valoarea din JSON sau numele imaginii (fără extensie) dacă lipsește
+    imag.alt = imag.alt || numeFis;
+
+    imag.cale_fisier = path.join("/", caleGalerie, imag.cale_fisier);
   }
 }
 initImagini();

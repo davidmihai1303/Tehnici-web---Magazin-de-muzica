@@ -15,6 +15,7 @@
 #grid-galerie {
   display: grid;
   gap: 1rem;
+  counter-reset: sectiune-galerie;
 }
 #grid-galerie figure {
   margin: 0;
@@ -45,12 +46,21 @@
   color: var(--culoare-secundara);
   font-weight: 600;
   background: rgba(255, 255, 255, 0.85);
-  transform: scale(0);
+  transform: scale(1);
   transform-origin: center center;
+}
+#grid-galerie figure figcaption .text-figcaption {
+  margin: 0;
+}
+#grid-galerie figure figcaption .text-figcaption::before {
+  counter-increment: sectiune-galerie;
+  content: counter(sectiune-galerie, lower-greek) ") ";
+}
+#grid-galerie figure figcaption .text-figcaption {
   transition: transform 1.1s ease-in-out;
 }
-#grid-galerie figure:hover figcaption {
-  transform: scale(1);
+#grid-galerie figure:hover figcaption .text-figcaption {
+  transform: scale(1.7);
 }
 #grid-galerie figure:hover picture,
 #grid-galerie figure:hover img {

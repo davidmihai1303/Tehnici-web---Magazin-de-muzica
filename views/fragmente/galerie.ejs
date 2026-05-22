@@ -12,10 +12,14 @@
               <% if (contor < 12 && imag.luni?.includes(lunaCurenta)) { %>
                 <figure>
                   <picture>
-                    <source srcset="<%- imag.fisier_mediu %>" media="(max-width:1100px)">
+                    <source srcset="<%- imag.fisier_mic %>" media="(max-width:768px)">
+                    <source srcset="<%- imag.fisier_mediu %>" media="(max-width:1024px)">
                     <img src="<%- imag.cale_fisier %>" alt="<%- imag.alt %>" title="<%- imag.titlu %>">
                   </picture>
-                  <figcaption><%- imag.text_descriere %></figcaption>
+                  <figcaption>
+                    <p class="text-figcaption"><%- imag.text_descriere %>
+                    </p>
+                  </figcaption>
                 </figure>
                 <% contor++; %>
                   <% } %>
