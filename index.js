@@ -49,6 +49,43 @@ app.get(["/", "/index", "/home"], function (req, res) {
   });
 });
 
+app.get("/chitare_animate", function (req, res) {
+  const vectLuni = ["ianuarie", "februarie", "martie", "aprilie", "mai", "iunie", "iulie", "august", "septembrie", "octombrie", "noiembrie", "decembrie"];
+  // Testăm cu Decembrie pentru a avea același criteriu cu galeria statică
+  const lunaCurenta = vectLuni[new Date("2026-12-25").getMonth()];
+  let matchingImgs = obGlobal.obImagini.imagini.filter(img => img.luni?.includes(lunaCurenta));
+  let maxImages = matchingImgs.length;
+
+  let possibleN = [6, 8, 10, 12];
+  let validN = possibleN.filter(num => num <= maxImages);
+  if (validN.length === 0) {
+    // Dacă nu sunt cel puțin 6 imagini, luăm cel mai mare număr par posibil
+    let maxEven = Math.floor(maxImages / 2) * 2;
+    validN = [maxEven > 0 ? maxEven : 2];
+  }
+  let n = validN[Math.floor(Math.random() * validN.length)];
+
+  try {
+    let caleScss = path.join(obGlobal.folderScss, "galerie_animata.scss");
+    let scssContent = fs.readFileSync(caleScss, "utf-8");
+    // Ștergem absolut toate definițiile anterioare ale lui $n pentru curățenie
+    scssContent = scssContent.replace(/^\$n:\s*.*;?\n?/gm, "");
+    // Adăugăm valoarea dinamică curentă, urmată IAR de variabila !default obligatorie pentru temă
+    scssContent = `$n: ${n};\n$n: 6 !default;\n` + scssContent;
+    // Suprascriem fișierul SASS cu noua variabilă și apelăm funcția dedicată
+    fs.writeFileSync(caleScss, scssContent);
+    compileazaScss("galerie_animata.scss");
+  } catch (err) {
+    console.error("Eroare la compilarea SASS pentru galeria animată:", err);
+  }
+
+  res.render("pagini/chitare_animate", {
+    ip: req.ip,
+    imagini: obGlobal.obImagini.imagini,
+    nrImaginiAnimata: n
+  });
+});
+
 function verificareErori() {
   const caleFisier = path.join(__dirname, "resurse/json/erori.json");
 

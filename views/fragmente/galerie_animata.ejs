@@ -1,0 +1,23 @@
+<link rel="stylesheet" href="/resurse/css/galerie_animata.css">
+<h2>Galerie Animată</h2>
+<section id="galerie-animata">
+  <% const vectLuni=["ianuarie", "februarie" , "martie" , "aprilie" , "mai" , "iunie" , "iulie" , "august"
+    , "septembrie" , "octombrie" , "noiembrie" , "decembrie" ]; %>
+    <% const lunaCurenta=vectLuni[new Date("2026-12-25").getMonth()]; %>
+      <% let contorAnimat=0; %>
+        <% for (let imag of locals.imagini) { %>
+          <% if (contorAnimat < locals.nrImaginiAnimata && imag.luni?.includes(lunaCurenta)) { %>
+            <figure>
+              <picture>
+                <source srcset="<%- imag.fisier_mic %>" media="(max-width:768px)">
+                <source srcset="<%- imag.fisier_mediu %>" media="(max-width:1024px)">
+                <img src="<%- imag.cale_fisier %>" alt="<%- imag.alt %>" title="<%- imag.titlu %>">
+              </picture>
+              <figcaption>
+                <p class="text-figcaption"><%- imag.text_descriere %></p>
+              </figcaption>
+            </figure>
+            <% contorAnimat++; %>
+              <% } %>
+                <% } %>
+</section>
