@@ -176,8 +176,8 @@ app.get("/eroare", function (req, res) {
 
 /**
  * Inițializează galeria de imagini din galerie.json și procesează imaginile.
- * Creează versiuni optimizate în format WebP (redimensionate la 300px lățime) 
- * în directorul "mediu" utilizând biblioteca Sharp și setează căile virtuale.
+ * Creează versiuni optimizate în format WebP (redimensionate la 300px si 150px lățime) 
+ * în directorul "mediu" si "mic" utilizând biblioteca Sharp și setează căile virtuale.
  */
 function initImagini() {
   var continut = fs.readFileSync(path.join(__dirname, "resurse/json/galerie.json")).toString("utf-8");
@@ -198,7 +198,7 @@ function initImagini() {
   for (let imag of vImagini) {
     [numeFis, ext] = imag.cale_fisier.split("."); //"ceva.png" -> ["ceva", "png"]
     let caleFisAbs = path.join(caleAbs, imag.cale_fisier);
-    
+
     // Generare imagine medie (300px)
     let caleFisMediuAbs = path.join(caleAbsMediu, numeFis + ".webp");
     sharp(caleFisAbs).resize(300).toFile(caleFisMediuAbs);
@@ -224,7 +224,6 @@ initImagini();
  */
 function compileazaScss(caleScss, caleCss) {
   if (!caleCss) {
-
     let numeFisExt = path.basename(caleScss); // "folder1/folder2/a.scss" -> "a.scss"
     let numeFis = numeFisExt.split(".")[0]   /// "a.scss"  -> ["a","scss"]
     caleCss = numeFis + ".css"; // output: a.css
@@ -237,18 +236,25 @@ function compileazaScss(caleScss, caleCss) {
 
   let caleBackup = path.join(obGlobal.folderBackup, "resurse/css");
   if (!fs.existsSync(caleBackup)) {
-    fs.mkdirSync(caleBackup, { recursive: true })
+    try {
+      fs.mkdirSync(caleBackup, { recursive: true });
+    } catch (eroare) {
+      console.error(`Eroare la crearea folderului de backup: ${eroare.message}`);
+    }
   }
 
   // la acest punct avem cai absolute in caleScss si  caleCss
 
   let numeFisCss = path.basename(caleCss);
   if (fs.existsSync(caleCss)) {
-    fs.copyFileSync(caleCss, path.join(obGlobal.folderBackup, "resurse/css", numeFisCss))// +(new Date()).getTime()
+    try {
+      fs.copyFileSync(caleCss, path.join(caleBackup, numeFisCss));
+    } catch (eroare) {
+      console.error(`Eroare la salvarea în backup a fișierului ${numeFisCss}: ${eroare.message}`);
+    }
   }
   rez = sass.compile(caleScss, { "sourceMap": true });
   fs.writeFileSync(caleCss, rez.css)
-
 }
 
 vFisiere = fs.readdirSync(obGlobal.folderScss);
