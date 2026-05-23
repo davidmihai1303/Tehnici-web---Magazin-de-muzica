@@ -480,3 +480,51 @@ main a:not(#recenzii-video a):hover {
 main a:not(#recenzii-video a):active {
   border: 2px solid var(--culoare-principala);
 }
+
+hr {
+  border: none;
+  height: 18px;
+  opacity: 1;
+  margin: 2.5rem 0;
+  background-image:
+    linear-gradient(90deg, var(--culoare-secundara) 25%, transparent 25%, transparent 75%, var(--culoare-secundara) 75%),
+    linear-gradient(90deg, var(--culoare-secundara) 25%, transparent 25%, transparent 75%, var(--culoare-secundara) 75%);
+  background-size: 12px 12px;
+  background-repeat: repeat-x;
+  background-position: 0 0, 6px 6px;
+}
+
+.wrapper {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  width: fit-content;
+  white-space: nowrap;
+  padding-bottom: clamp(90px, 15vw, 200px);
+  transform: translateX(-50%);
+}
+
+#text-reflexie {
+  /* position: absolute; */
+  display: inline-block;
+  transform-origin: 100% 0;
+  transform: skewY(-20deg);
+}
+
+#text-reflectat {
+  position: absolute;
+  left: 0;
+  top: 0;
+  transform-origin: 100% 0;
+  transform: scaleX(-1) skewY(-20deg);
+  opacity: 0.55;
+
+}
+
+#text-reflexie,
+#text-reflectat {
+  font-size: clamp(30px, 4.5vw, 50px);
+  line-height: clamp(30px, 4.5vw, 50px);
+  font-weight: bold;
+  padding-right: clamp(5px, 1.5vw, 15px);
+}
