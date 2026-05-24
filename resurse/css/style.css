@@ -527,4 +527,15 @@ hr {
   line-height: clamp(30px, 4.5vw, 50px);
   font-weight: bold;
   padding-right: clamp(5px, 1.5vw, 15px);
+  transition: color 0.3s ease;
+}
+
+/* Efect bidirecțional: */
+/* 1. Dacă hover-ul e pe textul de sus, colorează textul și reflexia de după el (+) */
+#text-reflexie:hover,
+#text-reflexie:hover + #text-reflectat,
+/* 2. Dacă hover-ul e pe reflexie, colorează reflexia și folosește :has() pentru a colora textul din fața ei */
+#text-reflectat:hover,
+#text-reflexie:has(+ #text-reflectat:hover) {
+  color: var(--culoare-highlight);
 }
