@@ -1,0 +1,160 @@
+@charset "UTF-8";
+h2 {
+  text-align: center;
+  font-weight: 700;
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+}
+
+#galerie-animata {
+  display: block;
+  position: relative;
+  width: 500px;
+  height: 500px;
+  margin: 3rem auto;
+  border: 15px solid transparent;
+  -o-border-image: url("/resurse/imagini/waves-background.png") 10;
+     border-image: url("/resurse/imagini/waves-background.png") 10;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+  background-color: transparent;
+}
+@media screen and (max-width: 1024px) {
+  #galerie-animata {
+    display: none;
+  }
+}
+#galerie-animata {
+  /* Când se vine cu cursorul, animația se oprește */
+}
+#galerie-animata:hover figure {
+  animation-play-state: paused;
+}
+#galerie-animata figure {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  animation-name: galerie-animata-anim;
+  animation-duration: 18s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  z-index: 5;
+}
+#galerie-animata img,
+#galerie-animata picture {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  display: block;
+}
+#galerie-animata figcaption {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(17, 59, 39, 0.8);
+  color: #baad93;
+  text-align: center;
+  padding: 10px;
+  padding-bottom: 0;
+}
+
+@keyframes galerie-animata-anim {
+  0% {
+    opacity: 0.9;
+    transform: translateX(0);
+    z-index: 20;
+  }
+  8.3333333333% {
+    opacity: 1;
+    transform: translateX(0);
+    z-index: 20;
+  }
+  10.8333333333% {
+    opacity: 0.75;
+    transform: translateX(30%);
+    z-index: 20;
+  }
+  13.3333333333% {
+    opacity: 0.5;
+    transform: translateX(-30%);
+    z-index: 20;
+  }
+  15.8333333333% {
+    opacity: 0.25;
+    transform: translateX(100%);
+    z-index: 20;
+  }
+  16.6666666667% {
+    opacity: 0;
+    transform: translateX(100%);
+    z-index: 5;
+  }
+  91.65% {
+    opacity: 0;
+    transform: translateX(0);
+    z-index: 5;
+  }
+  91.6666666667% {
+    opacity: 0.25;
+    transform: translateX(0);
+    z-index: 5;
+  }
+  100% {
+    opacity: 0.85;
+    transform: translateX(0);
+    z-index: 5;
+  }
+}
+#galerie-animata figure:nth-of-type(1) {
+  animation-delay: -18s;
+}
+
+#galerie-animata figure:nth-of-type(2) {
+  animation-delay: -15s;
+}
+
+#galerie-animata figure:nth-of-type(3) {
+  animation-delay: -12s;
+}
+
+#galerie-animata figure:nth-of-type(4) {
+  animation-delay: -9s;
+}
+
+#galerie-animata figure:nth-of-type(5) {
+  animation-delay: -6s;
+}
+
+#galerie-animata figure:nth-of-type(6) {
+  animation-delay: -3s;
+}
+
+#galerie-animata figure:nth-of-type(7) {
+  animation-delay: 0s;
+}
+
+#galerie-animata figure:nth-of-type(8) {
+  animation-delay: 3s;
+}
+
+#galerie-animata figure:nth-of-type(9) {
+  animation-delay: 6s;
+}
+
+#galerie-animata figure:nth-of-type(10) {
+  animation-delay: 9s;
+}
+
+#galerie-animata figure:nth-of-type(11) {
+  animation-delay: 12s;
+}
+
+#galerie-animata figure:nth-of-type(12) {
+  animation-delay: 15s;
+}/*# sourceMappingURL=galerie_animata.css.map */

@@ -335,6 +335,33 @@ app.get("/chitare", function (req, res) {
   });
 });
 
+
+
+app.get('/prajitura/:pret1/:pret2', function(req, res) {
+    // Preluăm prețurile din URL și le convertim la numere
+    let pret1 = parseFloat(req.params.pret1);
+    let pret2 = parseFloat(req.params.pret2);
+
+    // Mock date (aici de obicei citești din baza de date sau un JSON)
+    let toatePrajiturile = [
+        { nume: "Savarina", pret: 25, pt_diabetici: false },
+        { nume: "Amandina", pret: 40, pt_diabetici: false },
+        { nume: "Ecler cu stevia", pret: 35, pt_diabetici: true },
+        { nume: "Tiramisu keto", pret: 60, pt_diabetici: true },
+        { nume: "Tort de mere", pret: 120, pt_diabetici: false }
+    ];
+
+    // Filtrăm prăjiturile conform intervalului dat
+    let prajituriFiltrate = toatePrajiturile.filter(p => p.pret >= pret1 && p.pret <= pret2);
+
+    // Trimitem datele către template-ul EJS
+    res.render('pagini/prajituri', { 
+        prajituri: prajituriFiltrate,
+        pret1: pret1,
+        pret2: pret2
+    });
+});
+
 app.get("/*pagina", function (req, res) {
   console.log("Cale pagina", req.url);
   //verificam daca este un folder din /resurse

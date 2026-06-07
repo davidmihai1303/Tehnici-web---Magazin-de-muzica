@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <%- include('../fragmente/head') %>
+    <title>Prăjituri între <%= pret1 %> și <%= pret2 %></title>
+</head>
+<body>
+    <%- include('../fragmente/header') %>
+
+    <main>
+        <h1>Prăjituri disponibile</h1>
+
+        <div id="filtre">
+            <label><input type="radio" name="tip_diabet" value="tot" checked> Tot</label>
+            <label><input type="radio" name="tip_diabet" value="diabetici"> Pentru diabetici</label>
+            <label><input type="radio" name="tip_diabet" value="non-diabetici"> Pentru non-diabetici</label>
+            <button id="btn-afiseaza">Afișează</button>
+        </div>
+
+        <hr>
+
+        <div id="container-prajituri">
+            <% if (prajituri.length === 0) { %>
+                <p>Nu există prăjituri în acest interval de preț.</p>
+            <% } else { %>
+                <% for (let prod of prajituri) { %>
+                    <p class="prajitura <%= prod.pt_diabetici ? 'pt-diabetici' : 'non-diabetici' %>">
+                        <b><%= prod.nume %></b> - <%= prod.pret %> lei
+                        <% if (prod.pt_diabetici) { %>
+                            <span>(pentru diabetici)</span>
+                        <% } %>
+                    </p>
+                <% } %>
+            <% } %>
+        </div>
+
+        <hr>
+
+        <div id="container-istoric"></div>
+    </main>
+
+    <%- include('../fragmente/footer') %>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // ----- CERINȚA C: Filtrarea prăjiturilor din client -----
+            const btnAfiseaza = document.getElementById("btn-afiseaza");
+            btnAfiseaza.addEventListener("click", function() {
+                // Luam valoarea radio butonului bifat
+                const optiuneSelectata = document.querySelector('input[name="tip_diabet"]:checked').value;
+                const toateParagrafele = document.querySelectorAll(".prajitura");
+
+                toateParagrafele.forEach(paragraf => {
+                    // Resetăm vizibilitatea
+                    paragraf.style.display = "block"; 
+
+                    // Ascundem elementele care nu se potrivesc cu selecția
+                    if (optiuneSelectata === "diabetici" && paragraf.classList.contains("non-diabetici")) {
+                        paragraf.style.display = "none";
+                    } else if (optiuneSelectata === "non-diabetici" && paragraf.classList.contains("pt-diabetici")) {
+                        paragraf.style.display = "none";
+                    }
+                });
+            });
+
+            // ----- CERINȚA D: LocalStorage -----
+            // Citim intervalul vechi înainte să-l suprascriem
+            const intervalVechi = localStorage.getItem("intervalPreturiPrajituri");
+            
+            if (intervalVechi) {
+                // Creăm paragraful cerut dacă exista date trecute
+                const pIstoric = document.createElement("p");
+                pIstoric.innerHTML = "<i>Intervalul anterior de preturi: " + intervalVechi + "</i>";
+                document.getElementById("container-istoric").appendChild(pIstoric);
+            }
+
+            // Preluăm valorile curente trimise de pe server prin EJS
+            const pret1Curent = <%= pret1 %>;
+            const pret2Curent = <%= pret2 %>;
+
+            // Salvăm noul interval sub formă de string [pret1, pret2] pentru viitoarele vizite
+            localStorage.setItem("intervalPreturiPrajituri", "[" + pret1Curent + ", " + pret2Curent + "]");
+        });
+    </script>
+</body>
+</html>
