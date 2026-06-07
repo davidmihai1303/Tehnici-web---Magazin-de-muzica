@@ -3,12 +3,31 @@ const path = require('path');
 const fs = require('fs');
 const sass = require('sass');
 const sharp = require('sharp');
+const pg = require('pg');
 const app = express();
 const PORT = 8080;
 
 // Motor de randare EJS
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+
+client = new pg.Client({
+  database: "cti_2026",
+  user: "david",
+  password: "david",
+  host: "localhost",
+  port: 5432
+})
+client.connect()
+
+// client.query("select * from prajituri where id>3", function (err, rez) {
+//   if (err) {
+//     console.log("Eroare", err)
+//   }
+//   else {
+//     console.log(rez)
+//   }
+// })
 
 app.get("/favicon.ico", function (req, res) {
   res.sendFile(path.join(__dirname, "resurse/ico/favicon.ico"))

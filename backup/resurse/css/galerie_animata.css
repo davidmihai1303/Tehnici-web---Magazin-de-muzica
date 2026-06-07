@@ -38,7 +38,7 @@ h2 {
   margin: 0;
   opacity: 0;
   animation-name: galerie-animata-anim;
-  animation-duration: 24s;
+  animation-duration: 18s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
   z-index: 5;
@@ -68,37 +68,37 @@ h2 {
     transform: translateX(0);
     z-index: 20;
   }
-  6.25% {
+  8.3333333333% {
     opacity: 1;
     transform: translateX(0);
     z-index: 20;
   }
-  8.125% {
+  10.8333333333% {
     opacity: 0.75;
     transform: translateX(30%);
     z-index: 20;
   }
-  10% {
+  13.3333333333% {
     opacity: 0.5;
     transform: translateX(-30%);
     z-index: 20;
   }
-  11.875% {
+  15.8333333333% {
     opacity: 0.25;
     transform: translateX(100%);
     z-index: 20;
   }
-  12.5% {
+  16.6666666667% {
     opacity: 0;
     transform: translateX(100%);
     z-index: 5;
   }
-  93.7375% {
+  91.65% {
     opacity: 0;
     transform: translateX(0);
     z-index: 5;
   }
-  93.75% {
+  91.6666666667% {
     opacity: 0.25;
     transform: translateX(0);
     z-index: 5;
@@ -110,49 +110,49 @@ h2 {
   }
 }
 #galerie-animata figure:nth-of-type(1) {
-  animation-delay: -24s;
-}
-
-#galerie-animata figure:nth-of-type(2) {
-  animation-delay: -21s;
-}
-
-#galerie-animata figure:nth-of-type(3) {
   animation-delay: -18s;
 }
 
-#galerie-animata figure:nth-of-type(4) {
+#galerie-animata figure:nth-of-type(2) {
   animation-delay: -15s;
 }
 
-#galerie-animata figure:nth-of-type(5) {
+#galerie-animata figure:nth-of-type(3) {
   animation-delay: -12s;
 }
 
-#galerie-animata figure:nth-of-type(6) {
+#galerie-animata figure:nth-of-type(4) {
   animation-delay: -9s;
 }
 
-#galerie-animata figure:nth-of-type(7) {
+#galerie-animata figure:nth-of-type(5) {
   animation-delay: -6s;
 }
 
-#galerie-animata figure:nth-of-type(8) {
+#galerie-animata figure:nth-of-type(6) {
   animation-delay: -3s;
 }
 
-#galerie-animata figure:nth-of-type(9) {
+#galerie-animata figure:nth-of-type(7) {
   animation-delay: 0s;
 }
 
-#galerie-animata figure:nth-of-type(10) {
+#galerie-animata figure:nth-of-type(8) {
   animation-delay: 3s;
 }
 
-#galerie-animata figure:nth-of-type(11) {
+#galerie-animata figure:nth-of-type(9) {
   animation-delay: 6s;
 }
 
-#galerie-animata figure:nth-of-type(12) {
+#galerie-animata figure:nth-of-type(10) {
   animation-delay: 9s;
+}
+
+#galerie-animata figure:nth-of-type(11) {
+  animation-delay: 12s;
+}
+
+#galerie-animata figure:nth-of-type(12) {
+  animation-delay: 15s;
 }
